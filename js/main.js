@@ -36,7 +36,7 @@ if (idCard && heroRight) {
     });
 }
 
-// 3. Efecto magnético sutil en los botones principales (GITHUB / BEHANCE)
+// 3. Efecto magnético sutil en los botones principales
 document.querySelectorAll('.btn-bevel').forEach((btn) => {
     btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect();
@@ -51,7 +51,7 @@ document.querySelectorAll('.btn-bevel').forEach((btn) => {
     });
 });
 
-// 4. Efecto hacker/decodificación en títulos de proyectos al hacer hover
+// 4. Efecto de decodificación en títulos de proyectos al hacer hover
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789//_#';
 
 function scrambleText(element) {
