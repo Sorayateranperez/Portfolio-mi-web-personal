@@ -241,7 +241,6 @@ body {
     gap: 16px;
 }
 
-/* BOTONES ÉPICOS CON BARRIDO Y CONTRASTE INVERTIDO */
 .btn-bevel {
     display: inline-flex;
     align-items: center;
@@ -325,7 +324,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ================= TARJETA DE AVATAR HUD (3D + ESCÁNER) ================= */
+/* ================= TARJETA DE AVATAR HUD ================= */
 .hero-right {
     perspective: 1000px;
 }
@@ -387,7 +386,6 @@ body {
     overflow: hidden;
 }
 
-/* LÍNEA LÁSER ESCÁNER EN AVATAR */
 .avatar-frame::after {
     content: '';
     position: absolute;
@@ -485,7 +483,7 @@ body {
     font-weight: 700;
 }
 
-/* ================= PROYECTOS DESTACADOS (HOVER ÉPICO) ================= */
+/* ================= PROYECTOS DESTACADOS ================= */
 .section-heading {
     font-family: var(--font-display);
     font-size: 2.3rem;
@@ -513,7 +511,6 @@ body {
     transition: transform 0.4s var(--ease-bounce);
 }
 
-/* Sombra sólida desplazada estilo neo-brutalista */
 .project-wrapper::before {
     content: '';
     position: absolute;
@@ -575,13 +572,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 210px;
+    min-height: 265px;
     position: relative;
     overflow: hidden;
     transition: background-color 0.35s ease;
 }
 
-/* Destello diagonal de cristal al pasar el ratón */
 .project-card::after {
     content: '';
     position: absolute;
@@ -608,7 +604,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
 }
 
 .card-num {
@@ -638,7 +634,6 @@ body {
     transition: transform 0.35s var(--ease-bounce);
 }
 
-/* Ecualizador en las barras de tarjeta */
 .project-wrapper:hover .vertical-stripes span:nth-child(1) { transform: scaleY(0.45); }
 .project-wrapper:hover .vertical-stripes span:nth-child(2) { transform: scaleY(1.2); transition-delay: 0.03s; }
 .project-wrapper:hover .vertical-stripes span:nth-child(3) { transform: scaleY(0.65); transition-delay: 0.06s; }
@@ -649,6 +644,72 @@ body {
 .stripes-purple span { background: var(--purple); }
 .stripes-blue span   { background: var(--blue); }
 .stripes-yellow span { background: var(--yellow); }
+
+/* ================= VISOR DE PROYECTO ================= */
+.card-viewport {
+    border: 1.5px solid var(--ink-black);
+    margin-bottom: 18px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--ink-black);
+}
+
+.card-viewport-inner {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    transition: transform 0.45s var(--ease-snappy), filter 0.35s ease;
+}
+
+.card-viewport-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.viewport-wp .card-viewport-inner {
+    background: linear-gradient(120deg, #EFE7FA 0%, #DFCEF5 100%);
+    color: var(--purple);
+}
+
+.viewport-code .card-viewport-inner {
+    background: linear-gradient(120deg, #E4EEF5 0%, #C8DCEB 100%);
+    color: var(--blue);
+}
+
+.viewport-drupal .card-viewport-inner {
+    background: linear-gradient(120deg, #FCF3D7 0%, #F6E2A6 100%);
+    color: var(--ink-black);
+}
+
+.tech-glyph {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.tech-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border: 1.5px solid var(--ink-black);
+    background-color: var(--bg-cream);
+    color: var(--ink-black);
+}
+
+.project-wrapper:hover .card-viewport-inner {
+    transform: scale(1.06);
+}
+
+.project-wrapper:hover .tech-label {
+    background-color: var(--ink-black);
+    color: var(--bg-cream);
+}
 
 .card-mid {
     display: flex;
