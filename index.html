@@ -119,7 +119,7 @@
             </div>
         </section>
 
-        <!-- ================= PROYECTOS // EXPEDIENTES (ÚNICO BLOQUE ÉPICO) ================= -->
+        <!-- ================= PROYECTOS // EXPEDIENTES ================= -->
         <section id="proyectos" class="section-block reveal-section">
             <div class="section-header-row">
                 <h2 class="section-heading">PROYECTOS // EXPEDIENTES</h2>
@@ -313,30 +313,39 @@
             </div>
         </section>
 
-        <!-- ================= SOBRE MÍ // PERFIL, MÉTODO & TRIPULACIÓN ================= -->
+        <!-- ================= SOBRE MÍ // PERFIL, STACK SLIDER & TRIPULACIÓN ================= -->
         <section id="sobre-mi" class="section-block reveal-section">
             <div class="section-header-row">
                 <h2 class="section-heading">SOBRE MÍ // PERFIL</h2>
-                <span class="section-subtag">// CÓMO TRABAJO &amp; QUÉ APORTO</span>
+                <span class="section-subtag">// OPERADOR, STACK DESLIZABLE &amp; UNIDAD K9</span>
             </div>
             <div class="full-divider"></div>
 
-            <!-- FILA 1: PERFIL PROFESIONAL + SYSTEM STACK -->
+            <!-- FILA 1: BIO CON FOTO + STACK COMPACTO CON SLIDER -->
             <div id="stack" class="about-grid">
-                <!-- COLUMNA IZQUIERDA: BIO PROFESIONAL -->
+                <!-- IZQUIERDA: PERFIL CON FOTO -->
                 <div class="about-bio-wrapper reveal-item">
                     <div class="folder-tab tab-orange">OPERATOR // 01</div>
                     <div class="about-bio-border">
                         <div class="about-bio-card">
-                            <h3>SORAYA TERÁN PÉREZ</h3>
-                            <p class="about-role">Desarrolladora Web Junior · Front-End &amp; CMS</p>
-                            <p class="about-degree">[ CFGS DESARROLLO DE APLICACIONES WEB ]</p>
+                            <div class="about-top-flex">
+                                <div class="about-photo-frame">
+                                    <span class="mini-corner tl"></span>
+                                    <span class="mini-corner tr"></span>
+                                    <span class="mini-corner bl"></span>
+                                    <span class="mini-corner br"></span>
+                                    <!-- Cambia img/sobre-mi.png por tu foto real o setup -->
+                                    <img src="img/sobre-mi.png" alt="Soraya Terán Pérez">
+                                </div>
+                                <div class="about-identity">
+                                    <h3>SORAYA TERÁN PÉREZ</h3>
+                                    <p class="about-role">Desarrolladora Web Junior</p>
+                                    <p class="about-degree">[ CFGS DAW · FRONT-END &amp; CMS ]</p>
+                                </div>
+                            </div>
 
                             <p class="about-text">
-                                Me apasiona convertir una idea o un diseño en una interfaz real, ordenada y agradable de usar. Como desarrolladora junior formada en DAW, combino una base sólida de maquetación y JavaScript con el dominio de gestores de contenido como WordPress y Drupal.
-                            </p>
-                            <p class="about-text about-text-second">
-                                No busco solo que una página "funcione": me fijo en la jerarquía visual, la limpieza del código, la experiencia en móvil y los pequeños detalles que hacen que un proyecto se sienta cuidado.
+                                Me gusta construir webs limpias, con carácter y fáciles de recorrer, uniendo código front-end a medida con gestores como WordPress y Drupal. Cuido la jerarquía visual, la adaptación móvil y las interacciones para que el resultado se sienta vivo y sólido.
                             </p>
 
                             <div class="bio-divider"></div>
@@ -344,52 +353,72 @@
                             <ul class="bio-specs">
                                 <li><span>&gt; ROL</span><strong>DESARROLLADORA WEB JUNIOR</strong></li>
                                 <li><span>&gt; FORMACIÓN</span><strong>CFGS DAW</strong></li>
-                                <li><span>&gt; ESPECIALIDAD</span><strong>FRONT-END + WORDPRESS &amp; DRUPAL</strong></li>
-                                <li><span>&gt; DISPONIBILIDAD</span><strong>ABIERTA A PROYECTOS Y EQUIPO</strong></li>
+                                <li><span>&gt; ENFOQUE</span><strong>FRONT-END + WORDPRESS &amp; DRUPAL</strong></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- COLUMNA DERECHA: SYSTEM // STACK -->
+                <!-- DERECHA: STACK COMPACTO + SLIDER CON FLECHAS -->
                 <div class="stack-panel-wrapper reveal-item">
                     <div class="stack-panel-border">
                         <div class="stack-panel">
                             <div class="stack-header">
-                                <span>SYSTEM // STACK &amp; HERRAMIENTAS</span>
-                                <span>06 MODULES</span>
+                                <span>SYSTEM // STACK COMPACTO</span>
+                                <span id="stackCounter">01 - 03 / 06</span>
                             </div>
 
-                            <div class="stack-grid">
-                                <div class="stack-tile accent-orange">
-                                    <span class="stack-num">01 // CORE</span>
-                                    <h4>HTML5 / CSS3</h4>
-                                    <p>SEMÁNTICA, GRID, FLEXBOX &amp; ANIMACIONES</p>
+                            <div class="slider-shell">
+                                <button type="button" class="slider-arrow slider-prev" data-slider="stackSlider" aria-label="Tecnologías anteriores">‹</button>
+
+                                <div id="stackSlider" class="slider-track stack-track">
+                                    <div class="mini-stack-card accent-orange">
+                                        <span class="mini-num">01</span>
+                                        <h4>HTML5 / CSS3</h4>
+                                        <p>SEMÁNTICA, GRID &amp; HUD</p>
+                                    </div>
+                                    <div class="mini-stack-card accent-yellow">
+                                        <span class="mini-num">02</span>
+                                        <h4>JavaScript</h4>
+                                        <p>DOM, EVENTOS &amp; UI</p>
+                                    </div>
+                                    <div class="mini-stack-card accent-purple">
+                                        <span class="mini-num">03</span>
+                                        <h4>WordPress</h4>
+                                        <p>TEMAS &amp; CONTENIDOS</p>
+                                    </div>
+                                    <div class="mini-stack-card accent-blue">
+                                        <span class="mini-num">04</span>
+                                        <h4>Drupal</h4>
+                                        <p>VISTAS &amp; ARQUITECTURA</p>
+                                    </div>
+                                    <div class="mini-stack-card accent-orange">
+                                        <span class="mini-num">05</span>
+                                        <h4>Git / GitHub</h4>
+                                        <p>VERSIONES &amp; PAGES</p>
+                                    </div>
+                                    <div class="mini-stack-card accent-purple">
+                                        <span class="mini-num">06</span>
+                                        <h4>Figma / UI</h4>
+                                        <p>WIREFRAMES &amp; ESTILO</p>
+                                    </div>
                                 </div>
-                                <div class="stack-tile accent-yellow">
-                                    <span class="stack-num">02 // LOGIC</span>
-                                    <h4>JavaScript</h4>
-                                    <p>DOM, EVENTOS &amp; INTERACTIVIDAD</p>
+
+                                <button type="button" class="slider-arrow slider-next" data-slider="stackSlider" aria-label="Siguientes tecnologías">›</button>
+                            </div>
+
+                            <div class="workflow-mini-strip">
+                                <div class="wf-mini wf-purple">
+                                    <span>01 // PLAN</span>
+                                    <strong>ESTRUCTURA</strong>
                                 </div>
-                                <div class="stack-tile accent-purple">
-                                    <span class="stack-num">03 // CMS</span>
-                                    <h4>WordPress</h4>
-                                    <p>TEMAS, CONTENIDOS &amp; PERSONALIZACIÓN</p>
+                                <div class="wf-mini wf-blue">
+                                    <span>02 // BUILD</span>
+                                    <strong>CÓDIGO &amp; CMS</strong>
                                 </div>
-                                <div class="stack-tile accent-blue">
-                                    <span class="stack-num">04 // CMS</span>
-                                    <h4>Drupal</h4>
-                                    <p>ARQUITECTURA MODULAR &amp; VISTAS</p>
-                                </div>
-                                <div class="stack-tile accent-orange">
-                                    <span class="stack-num">05 // WORKFLOW</span>
-                                    <h4>Git / GitHub</h4>
-                                    <p>CONTROL DE VERSIONES &amp; DESPLIEGUE</p>
-                                </div>
-                                <div class="stack-tile accent-purple">
-                                    <span class="stack-num">06 // DESIGN</span>
-                                    <h4>Figma / UI</h4>
-                                    <p>PROTOTIPADO &amp; SISTEMAS VISUALES</p>
+                                <div class="wf-mini wf-yellow">
+                                    <span>03 // POLISH</span>
+                                    <strong>TEST &amp; DETALLE</strong>
                                 </div>
                             </div>
                         </div>
@@ -397,93 +426,96 @@
                 </div>
             </div>
 
-            <!-- FILA 2: PROTOCOLO DE TRABAJO (3 PASOS PROFESIONALES) -->
-            <div class="workflow-grid reveal-item">
-                <div class="workflow-card wf-purple">
-                    <div class="wf-top">
-                        <span>FASE // 01</span>
-                        <strong>ESTRUCTURA &amp; UI</strong>
-                    </div>
-                    <p>Analizo qué necesita comunicar la web, defino una arquitectura clara y diseño bocetos limpios antes de escribir código.</p>
-                </div>
-
-                <div class="workflow-card wf-blue">
-                    <div class="wf-top">
-                        <span>FASE // 02</span>
-                        <strong>CONSTRUCCIÓN &amp; CMS</strong>
-                    </div>
-                    <p>Desarrollo el front-end responsive o configuro WordPress/Drupal con estructura escalable y fácil de mantener.</p>
-                </div>
-
-                <div class="workflow-card wf-yellow">
-                    <div class="wf-top">
-                        <span>FASE // 03</span>
-                        <strong>DETALLE &amp; CONTROL</strong>
-                    </div>
-                    <p>Reviso velocidad, adaptación móvil, micro-interacciones y versionado en GitHub para entregar un resultado sólido.</p>
-                </div>
-            </div>
-
-            <!-- FILA 3: PATRULLA CANINA CON INTRODUCCIÓN PERSONAL + FICHAS GALÁCTICAS -->
+            <!-- FILA 2: PATRULLA CANINA CON SLIDER DE FICHAS DESLIZABLES -->
             <div class="crew-box-wrapper reveal-item">
                 <div class="crew-box-border">
                     <div class="crew-box">
                         <div class="crew-header">
                             <div>
-                                <span class="crew-tag">// STARFLEET_K9_UNIT — MI EQUIPO FUERA DE PANTALLA</span>
-                                <h3>PATRULLA CANINA // TRIPULACIÓN DE A BORDO</h3>
+                                <span class="crew-tag">// STARFLEET_K9_UNIT — LO MÁS IMPORTANTE EN TIERRA</span>
+                                <h3>PATRULLA CANINA // ARCHIVO DE TRIPULACIÓN</h3>
                             </div>
-                            <span class="crew-status">[ PASA EL RATÓN PARA ESCANEAR FICHA ]</span>
+                            <div class="crew-controls">
+                                <span id="petCounter" class="crew-status">[ FICHA 01 / 03 ]</span>
+                            </div>
                         </div>
 
                         <p class="crew-intro">
-                            Detrás de cada línea de código hay una parte de mi vida que lo equilibra todo. Ellos son mis compañeros inseparables, mi cable a tierra después de horas frente a la pantalla y el mejor recordatorio de que las mejores ideas siempre llegan después de un buen paseo.
+                            Más allá de las pantallas y los proyectos, mi patrulla canina es lo que más me importa: mi refugio diario, mi motor y quienes me recuerdan bajar revoluciones y disfrutar del camino. Desliza las fichas con las flechas para conocer a toda la tripulación.
                         </p>
 
-                        <div class="crew-grid">
-                            <!-- PERRO 01 -->
-                            <article class="pet-card pet-purple">
-                                <div class="pet-photo-wrap">
-                                    <span class="pet-badge">UNIT // K9-ALPHA</span>
-                                    <img src="img/perro-1.png" alt="Compañero canino 01">
-                                </div>
-                                <div class="pet-info">
-                                    <div class="pet-title-row">
-                                        <h4>UNIDAD CANINA 01</h4>
-                                        <span>[ RANGO: MORAL_OFFICER ]</span>
-                                    </div>
-                                    <p class="pet-bio">
-                                        Oficial de moral y vigilancia de periférico. Activa el modo siesta táctica justo cuando el CSS se pone intenso.
-                                    </p>
-                                    <div class="pet-hud-dossier">
-                                        <div><span>SECTOR:</span> <strong>PUENTE DE MANDO / SOFÁ</strong></div>
-                                        <div><span>HABILIDAD:</span> <strong>REDUCCIÓN DE ESTRÉS +95%</strong></div>
-                                        <div><span>PROTOCOLO:</span> <strong>PEDIR PREMIO AL COMPILAR</strong></div>
-                                    </div>
-                                </div>
-                            </article>
+                        <div class="slider-shell pet-slider-shell">
+                            <button type="button" class="slider-arrow slider-prev pet-arrow" data-slider="petsSlider" aria-label="Mascota anterior">‹</button>
 
-                            <!-- PERRO 02 -->
-                            <article class="pet-card pet-yellow">
-                                <div class="pet-photo-wrap">
-                                    <span class="pet-badge">UNIT // K9-OMEGA</span>
-                                    <img src="img/perro-2.png" alt="Compañero canino 02">
-                                </div>
-                                <div class="pet-info">
-                                    <div class="pet-title-row">
-                                        <h4>UNIDAD CANINA 02</h4>
-                                        <span>[ RANGO: RADAR_SCOUT ]</span>
+                            <div id="petsSlider" class="slider-track pets-track">
+                                <!-- MASCOTA 01 -->
+                                <article class="pet-card pet-purple">
+                                    <div class="pet-photo-wrap">
+                                        <span class="pet-badge">UNIT // K9-01</span>
+                                        <img src="img/perro-1.png" alt="Ficha de mascota 01">
                                     </div>
-                                    <p class="pet-bio">
-                                        Exploradora de largo alcance y detectora oficial de descansos. Supervisa cada commit desde primera línea.
-                                    </p>
-                                    <div class="pet-hud-dossier">
-                                        <div><span>SECTOR:</span> <strong>SENSOR ÓPTICO / ESCRITORIO</strong></div>
-                                        <div><span>HABILIDAD:</span> <strong>ALERTA DE PASEO EN TIEMPO REAL</strong></div>
-                                        <div><span>PROTOCOLO:</span> <strong>MIRADA LÁSER HASTA QUE JUEGUES</strong></div>
+                                    <div class="pet-info">
+                                        <div class="pet-title-row">
+                                            <h4>COMPAÑERO 01</h4>
+                                            <span>[ RANGO: MORAL_OFFICER ]</span>
+                                        </div>
+                                        <p class="pet-bio">
+                                            Oficial de moral y vigilancia de periférico. Activa el modo siesta táctica cuando el código se pone exigente.
+                                        </p>
+                                        <div class="pet-hud-dossier">
+                                            <div><span>SECTOR:</span> <strong>PUENTE DE MANDO / SOFÁ</strong></div>
+                                            <div><span>HABILIDAD:</span> <strong>REDUCCIÓN DE ESTRÉS +95%</strong></div>
+                                            <div><span>PROTOCOLO:</span> <strong>PEDIR PREMIO AL COMPILAR</strong></div>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+
+                                <!-- MASCOTA 02 -->
+                                <article class="pet-card pet-yellow">
+                                    <div class="pet-photo-wrap">
+                                        <span class="pet-badge">UNIT // K9-02</span>
+                                        <img src="img/perro-2.png" alt="Ficha de mascota 02">
+                                    </div>
+                                    <div class="pet-info">
+                                        <div class="pet-title-row">
+                                            <h4>COMPAÑERO 02</h4>
+                                            <span>[ RANGO: RADAR_SCOUT ]</span>
+                                        </div>
+                                        <p class="pet-bio">
+                                            Exploradora de largo alcance y detectora oficial de descansos. Supervisa cada commit desde primera línea.
+                                        </p>
+                                        <div class="pet-hud-dossier">
+                                            <div><span>SECTOR:</span> <strong>SENSOR ÓPTICO / ESCRITORIO</strong></div>
+                                            <div><span>HABILIDAD:</span> <strong>ALERTA DE PASEO EN TIEMPO REAL</strong></div>
+                                            <div><span>PROTOCOLO:</span> <strong>MIRADA LÁSER HASTA QUE JUEGUES</strong></div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- MASCOTA 03 (AÑADE MÁS TARJETAS SIGUIENDO ESTE MISMO PATRÓN) -->
+                                <article class="pet-card pet-blue-card">
+                                    <div class="pet-photo-wrap">
+                                        <span class="pet-badge">UNIT // K9-03</span>
+                                        <img src="img/perro-3.png" alt="Ficha de mascota 03">
+                                    </div>
+                                    <div class="pet-info">
+                                        <div class="pet-title-row">
+                                            <h4>COMPAÑERO 03</h4>
+                                            <span>[ RANGO: CO-PILOT_GUARD ]</span>
+                                        </div>
+                                        <p class="pet-bio">
+                                            Copiloto de guardia y especialista en acompañar cada jornada desde la sombra con lealtad absoluta.
+                                        </p>
+                                        <div class="pet-hud-dossier">
+                                            <div><span>SECTOR:</span> <strong>BAHÍA DE CARGA / PASILLO</strong></div>
+                                            <div><span>HABILIDAD:</span> <strong>LEALTAD MÁXIMA 24/7</strong></div>
+                                            <div><span>PROTOCOLO:</span> <strong>SALUDO ESTELAR AL ENTRAR</strong></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <button type="button" class="slider-arrow slider-next pet-arrow" data-slider="petsSlider" aria-label="Siguiente mascota">›</button>
                         </div>
                     </div>
                 </div>
