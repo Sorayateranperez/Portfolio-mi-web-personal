@@ -78,9 +78,47 @@ function scrambleText(element) {
     }, 22);
 }
 
-document.querySelectorAll('.project-wrapper').forEach((card) => {
-    const title = card.querySelector('.card-mid h3');
+document.querySelectorAll('.project-wrapper, .dossier-wrapper').forEach((card) => {
+    const title = card.querySelector('.card-mid h3, .dossier-content h3');
     if (title) {
         card.addEventListener('mouseenter', () => scrambleText(title));
     }
 });
+
+// 5. Aparición suave escalonada al hacer scroll
+const revealItems = document.querySelectorAll('.reveal-item');
+
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, idx * 70);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.12 }
+    );
+
+    revealItems.forEach((el) => observer.observe(el));
+} else {
+    revealItems.forEach((el) => el.classList.add('is-visible'));
+}
+
+// 6. Estado visual al enviar el formulario de contacto
+const contactForm = document.getElementById('contactForm');
+const formFeedback = document.getElementById('formFeedback');
+
+if (contactForm && formFeedback) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value.trim();
+        formFeedback.textContent = `[ TRANSMISIÓN PREPARADA PARA ${nombre.toUpperCase() || 'OPERADOR'} — CONECTA UN SERVICIO DE CORREO PARA ENVIAR ]`;
+        formFeedback.style.color = '#7B4BB1';
+        formFeedback.style.fontWeight = '700';
+        contactForm.reset();
+    });
+}
