@@ -37,8 +37,8 @@
                     <ul class="nav-links">
                         <li><a href="#inicio">// INICIO</a></li>
                         <li><a href="#proyectos">// PROYECTOS</a></li>
-                        <li><a href="#expedientes">// EXPEDIENTES</a></li>
                         <li><a href="#sobre-mi">// SOBRE MÍ</a></li>
+                        <li><a href="#stack">// STACK</a></li>
                         <li><a href="#contacto">// CONTACTO</a></li>
                     </ul>
                 </nav>
@@ -119,263 +119,192 @@
             </div>
         </section>
 
-        <!-- ================= PROYECTOS DESTACADOS ================= -->
-        <section id="proyectos" class="reveal-section">
-            <h2 class="section-heading">PROYECTOS DESTACADOS</h2>
-            <div class="full-divider"></div>
-
-            <div class="projects-grid">
-                <!-- TARJETA 01: WORDPRESS -->
-                <article class="project-wrapper reveal-item" onclick="window.open('#exp-wordpress', '_self')">
-                    <div class="folder-tab tab-purple">ARCHIVE // 01</div>
-                    <div class="project-card-border">
-                        <div class="project-card">
-                            <div class="card-top">
-                                <span class="card-num num-purple">01</span>
-                                <div class="vertical-stripes stripes-purple">
-                                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                                </div>
-                            </div>
-
-                            <div class="card-viewport viewport-wp">
-                                <div class="card-viewport-inner">
-                                    <span class="tech-glyph">W</span>
-                                    <span class="tech-label">WORDPRESS_CMS</span>
-                                </div>
-                            </div>
-
-                            <div class="card-mid">
-                                <div>
-                                    <h3>PROYECTO WORDPRESS</h3>
-                                    <p>TEMA / WEB EN PREPARACIÓN</p>
-                                </div>
-                                <a href="#exp-wordpress" class="card-arrow" onclick="event.stopPropagation()">↗</a>
-                            </div>
-
-                            <div>
-                                <div class="card-line"></div>
-                                <span class="preview-tag">[ STATUS: IN_DEV // WP_BUILD ]</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- TARJETA 02: CÓDIGO PROPIO -->
-                <article class="project-wrapper reveal-item" onclick="window.open('#exp-codigo', '_self')">
-                    <div class="folder-tab tab-blue">ARCHIVE // 02</div>
-                    <div class="project-card-border">
-                        <div class="project-card">
-                            <div class="card-top">
-                                <span class="card-num num-blue">02</span>
-                                <div class="vertical-stripes stripes-blue">
-                                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                                </div>
-                            </div>
-
-                            <div class="card-viewport viewport-code">
-                                <div class="card-viewport-inner">
-                                    <span class="tech-glyph">&lt;/&gt;</span>
-                                    <span class="tech-label">HTML_CSS_JS</span>
-                                </div>
-                            </div>
-
-                            <div class="card-mid">
-                                <div>
-                                    <h3>PROYECTO CÓDIGO</h3>
-                                    <p>DESARROLLO FRONT-END A MEDIDA</p>
-                                </div>
-                                <a href="#exp-codigo" class="card-arrow" onclick="event.stopPropagation()">↗</a>
-                            </div>
-
-                            <div>
-                                <div class="card-line"></div>
-                                <span class="preview-tag">[ STATUS: BUILDING // CUSTOM_CODE ]</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- TARJETA 03: DRUPAL -->
-                <article class="project-wrapper reveal-item" onclick="window.open('#exp-drupal', '_self')">
-                    <div class="folder-tab tab-yellow">ARCHIVE // 03</div>
-                    <div class="project-card-border">
-                        <div class="project-card">
-                            <div class="card-top">
-                                <span class="card-num num-yellow">03</span>
-                                <div class="vertical-stripes stripes-yellow">
-                                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                                </div>
-                            </div>
-
-                            <div class="card-viewport viewport-drupal">
-                                <div class="card-viewport-inner">
-                                    <span class="tech-glyph">◈</span>
-                                    <span class="tech-label">DRUPAL_SITE</span>
-                                </div>
-                            </div>
-
-                            <div class="card-mid">
-                                <div>
-                                    <h3>PROYECTO DRUPAL</h3>
-                                    <p>ARQUITECTURA Y CONTENIDOS CMS</p>
-                                </div>
-                                <a href="#exp-drupal" class="card-arrow" onclick="event.stopPropagation()">↗</a>
-                            </div>
-
-                            <div>
-                                <div class="card-line"></div>
-                                <span class="preview-tag">[ STATUS: QUEUED // DRUPAL_CMS ]</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- ================= PROYECTOS // EXPEDIENTES ================= -->
-        <section id="expedientes" class="section-block reveal-section">
+        <!-- ================= PROYECTOS // EXPEDIENTES (ÚNICO BLOQUE ÉPICO) ================= -->
+        <section id="proyectos" class="section-block reveal-section">
             <div class="section-header-row">
                 <h2 class="section-heading">PROYECTOS // EXPEDIENTES</h2>
-                <span class="section-subtag">// DESGLOSE TÉCNICO &amp; DEMOS</span>
+                <span class="section-subtag">// DESGLOSE TÉCNICO, TELEMETRÍA &amp; DEMOS</span>
             </div>
             <div class="full-divider"></div>
 
             <div class="dossiers-list">
-                <!-- EXPEDIENTE 01 -->
-                <article id="exp-wordpress" class="dossier-wrapper reveal-item">
+                <!-- EXPEDIENTE 01: WORDPRESS -->
+                <article id="exp-wordpress" class="dossier-wrapper dossier-theme-purple reveal-item">
                     <div class="folder-tab tab-purple">ARCHIVE // 01</div>
                     <div class="dossier-border">
                         <div class="dossier-card">
                             <div class="dossier-preview preview-purple">
+                                <div class="hud-grid-overlay" aria-hidden="true"></div>
+                                <div class="hud-scan-beam" aria-hidden="true"></div>
+                                <span class="hud-crosshair tl">+</span>
+                                <span class="hud-crosshair tr">+</span>
+                                <span class="hud-crosshair bl">+</span>
+                                <span class="hud-crosshair br">+</span>
+
                                 <div class="dossier-preview-top">
-                                    <span>DOSSIER_01 // PREVIEW</span>
-                                    <span>• • •</span>
+                                    <span>DOSSIER_01 // WP_ENGINE</span>
+                                    <div class="telemetry-bars" aria-hidden="true">
+                                        <span></span><span></span><span></span><span></span>
+                                    </div>
                                 </div>
+
                                 <div class="dossier-preview-center">
                                     <span class="dossier-num num-purple">01</span>
-                                    <div class="barcode small-barcode" aria-hidden="true"></div>
+                                    <span class="dossier-glyph">W</span>
                                 </div>
+
                                 <div class="dossier-preview-bottom">
-                                    <strong>CAPTURA DEL PROYECTO</strong>
-                                    <span>[ PENDIENTE DE INCORPORAR ]</span>
-                                    <small>VIEWPORT // DESKTOP</small>
+                                    <strong>WORDPRESS CMS BUILD</strong>
+                                    <span>[ VISOR LISTO PARA CAPTURA ]</span>
+                                    <small>VIEWPORT // DESKTOP &amp; MOBILE</small>
                                 </div>
                             </div>
 
                             <div class="dossier-content">
                                 <div class="dossier-top-meta">
-                                    <span>PROJECT FILE // 01</span>
-                                    <span class="status-pill">[ IN_DEV ]</span>
+                                    <span>PROJECT FILE // 01 — CMS_CUSTOM</span>
+                                    <span class="status-pill pill-pulse">[ STATUS: IN_DEV ]</span>
                                 </div>
-                                <h3>WORDPRESS</h3>
+                                <h3>PROYECTO WORDPRESS</h3>
                                 <p class="dossier-desc">
-                                    Un sitio administrable, de la estructura a los contenidos. Desarrollo de plantillas, personalización visual y organización de secciones en WordPress.
+                                    Un sitio web completamente administrable, pensado desde la arquitectura de contenidos hasta el diseño visual. Personalización de plantilla, maquetación responsive y optimización para que gestionar cada sección sea rápido e intuitivo.
                                 </p>
-                                <div class="dossier-stack">[ WORDPRESS · PHP · CSS ]</div>
+                                <div class="dossier-specs-row">
+                                    <span class="dossier-stack">[ WORDPRESS · PHP · CSS3 · RESPONSIVE ]</span>
+                                    <span class="dossier-signal">SIGNAL: 98%</span>
+                                </div>
                                 <div class="dossier-actions">
                                     <a href="#contacto" class="dossier-btn btn-solid-purple">
                                         <span>VER WEB</span>
-                                        <span>↗</span>
+                                        <span class="btn-icon">↗</span>
                                     </a>
                                     <a href="https://github.com/Sorayateranperez" target="_blank" rel="noopener" class="dossier-btn btn-outline">
                                         <span>CÓDIGO</span>
-                                        <span>↗</span>
+                                        <span class="btn-icon">↗</span>
                                     </a>
-                                    <span class="dossier-index">01 / 03</span>
+                                    <span class="dossier-index">MODULE // 01 OF 03</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- EXPEDIENTE 02 -->
-                <article id="exp-codigo" class="dossier-wrapper reveal-item">
+                <!-- EXPEDIENTE 02: CÓDIGO PROPIO -->
+                <article id="exp-codigo" class="dossier-wrapper dossier-theme-blue reveal-item">
                     <div class="folder-tab tab-blue">ARCHIVE // 02</div>
                     <div class="dossier-border">
                         <div class="dossier-card">
                             <div class="dossier-preview preview-blue">
+                                <div class="hud-grid-overlay" aria-hidden="true"></div>
+                                <div class="hud-scan-beam" aria-hidden="true"></div>
+                                <span class="hud-crosshair tl">+</span>
+                                <span class="hud-crosshair tr">+</span>
+                                <span class="hud-crosshair bl">+</span>
+                                <span class="hud-crosshair br">+</span>
+
                                 <div class="dossier-preview-top">
-                                    <span>DOSSIER_02 // PREVIEW</span>
-                                    <span>• • •</span>
+                                    <span>DOSSIER_02 // CORE_CODE</span>
+                                    <div class="telemetry-bars" aria-hidden="true">
+                                        <span></span><span></span><span></span><span></span>
+                                    </div>
                                 </div>
+
                                 <div class="dossier-preview-center">
                                     <span class="dossier-num num-blue">02</span>
-                                    <div class="barcode small-barcode" aria-hidden="true"></div>
+                                    <span class="dossier-glyph">&lt;/&gt;</span>
                                 </div>
+
                                 <div class="dossier-preview-bottom">
-                                    <strong>CAPTURA DEL PROYECTO</strong>
-                                    <span>[ PENDIENTE DE INCORPORAR ]</span>
-                                    <small>VIEWPORT // DESKTOP</small>
+                                    <strong>FRONT-END A MEDIDA</strong>
+                                    <span>[ VISOR LISTO PARA CAPTURA ]</span>
+                                    <small>VIEWPORT // ZERO_FRAMEWORKS</small>
                                 </div>
                             </div>
 
                             <div class="dossier-content">
                                 <div class="dossier-top-meta">
-                                    <span>PROJECT FILE // 02</span>
-                                    <span class="status-pill">[ IN_DEV ]</span>
+                                    <span>PROJECT FILE // 02 — FRONTEND_BUILD</span>
+                                    <span class="status-pill pill-pulse">[ STATUS: BUILDING ]</span>
                                 </div>
-                                <h3>CÓDIGO HTML/CSS/JS</h3>
+                                <h3>PROYECTO CÓDIGO HTML/CSS/JS</h3>
                                 <p class="dossier-desc">
-                                    Interfaces a medida con una base semántica, estilos responsive, animaciones HUD e interacciones limpias en JavaScript puro.
+                                    Desarrollo web artesanal sin plantillas: HTML5 semántico, arquitectura CSS moderna con Grid y Flexbox, micro-interacciones fluidas en JavaScript y máxima velocidad de carga desde la primera línea de código.
                                 </p>
-                                <div class="dossier-stack">[ HTML5 · CSS3 · JS ]</div>
+                                <div class="dossier-specs-row">
+                                    <span class="dossier-stack">[ HTML5 · CSS3 · JAVASCRIPT · UI/UX ]</span>
+                                    <span class="dossier-signal">SIGNAL: 100%</span>
+                                </div>
                                 <div class="dossier-actions">
                                     <a href="#contacto" class="dossier-btn btn-solid-blue">
                                         <span>VER WEB</span>
-                                        <span>↗</span>
+                                        <span class="btn-icon">↗</span>
                                     </a>
                                     <a href="https://github.com/Sorayateranperez" target="_blank" rel="noopener" class="dossier-btn btn-outline">
                                         <span>CÓDIGO</span>
-                                        <span>↗</span>
+                                        <span class="btn-icon">↗</span>
                                     </a>
-                                    <span class="dossier-index">02 / 03</span>
+                                    <span class="dossier-index">MODULE // 02 OF 03</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- EXPEDIENTE 03 -->
-                <article id="exp-drupal" class="dossier-wrapper reveal-item">
+                <!-- EXPEDIENTE 03: DRUPAL -->
+                <article id="exp-drupal" class="dossier-wrapper dossier-theme-yellow reveal-item">
                     <div class="folder-tab tab-yellow">ARCHIVE // 03</div>
                     <div class="dossier-border">
                         <div class="dossier-card">
                             <div class="dossier-preview preview-yellow">
+                                <div class="hud-grid-overlay" aria-hidden="true"></div>
+                                <div class="hud-scan-beam" aria-hidden="true"></div>
+                                <span class="hud-crosshair tl">+</span>
+                                <span class="hud-crosshair tr">+</span>
+                                <span class="hud-crosshair bl">+</span>
+                                <span class="hud-crosshair br">+</span>
+
                                 <div class="dossier-preview-top">
-                                    <span>DOSSIER_03 // PREVIEW</span>
-                                    <span>• • •</span>
+                                    <span>DOSSIER_03 // DRUPAL_CORE</span>
+                                    <div class="telemetry-bars" aria-hidden="true">
+                                        <span></span><span></span><span></span><span></span>
+                                    </div>
                                 </div>
+
                                 <div class="dossier-preview-center">
                                     <span class="dossier-num num-yellow">03</span>
-                                    <div class="barcode small-barcode" aria-hidden="true"></div>
+                                    <span class="dossier-glyph">◈</span>
                                 </div>
+
                                 <div class="dossier-preview-bottom">
-                                    <strong>CAPTURA DEL PROYECTO</strong>
-                                    <span>[ PENDIENTE DE INCORPORAR ]</span>
-                                    <small>VIEWPORT // DESKTOP</small>
+                                    <strong>ARQUITECTURA DRUPAL</strong>
+                                    <span>[ VISOR LISTO PARA CAPTURA ]</span>
+                                    <small>VIEWPORT // MODULAR_CMS</small>
                                 </div>
                             </div>
 
                             <div class="dossier-content">
                                 <div class="dossier-top-meta">
-                                    <span>PROJECT FILE // 03</span>
-                                    <span class="status-pill">[ IN_DEV ]</span>
+                                    <span>PROJECT FILE // 03 — ENTERPRISE_CMS</span>
+                                    <span class="status-pill pill-pulse">[ STATUS: QUEUED ]</span>
                                 </div>
-                                <h3>DRUPAL</h3>
+                                <h3>PROYECTO DRUPAL</h3>
                                 <p class="dossier-desc">
-                                    Contenido estructurado y una arquitectura modular. Configuración de tipos de contenido, taxonomías y vistas en Drupal.
+                                    Estructuración avanzada de contenidos y arquitectura modular. Modelado de tipos de contenido personalizados, taxonomías, vistas dinámicas y gestión de roles y permisos en Drupal.
                                 </p>
-                                <div class="dossier-stack">[ DRUPAL · TWIG · CMS ]</div>
+                                <div class="dossier-specs-row">
+                                    <span class="dossier-stack">[ DRUPAL · TWIG · TAXONOMÍAS · VIEWS ]</span>
+                                    <span class="dossier-signal">SIGNAL: 95%</span>
+                                </div>
                                 <div class="dossier-actions">
                                     <a href="#contacto" class="dossier-btn btn-solid-yellow">
                                         <span>VER WEB</span>
-                                        <span>↗</span>
+                                        <span class="btn-icon">↗</span>
                                     </a>
                                     <a href="https://github.com/Sorayateranperez" target="_blank" rel="noopener" class="dossier-btn btn-outline">
                                         <span>CÓDIGO</span>
-                                        <span>↗</span>
+                                        <span class="btn-icon">↗</span>
                                     </a>
-                                    <span class="dossier-index">03 / 03</span>
+                                    <span class="dossier-index">MODULE // 03 OF 03</span>
                                 </div>
                             </div>
                         </div>
@@ -384,35 +313,39 @@
             </div>
         </section>
 
-        <!-- ================= SOBRE MÍ // PERFIL & TRIPULACIÓN ================= -->
+        <!-- ================= SOBRE MÍ // PERFIL, MÉTODO & TRIPULACIÓN ================= -->
         <section id="sobre-mi" class="section-block reveal-section">
             <div class="section-header-row">
                 <h2 class="section-heading">SOBRE MÍ // PERFIL</h2>
-                <span class="section-subtag">// HUMAN BEHIND THE CODE</span>
+                <span class="section-subtag">// CÓMO TRABAJO &amp; QUÉ APORTO</span>
             </div>
             <div class="full-divider"></div>
 
-            <div class="about-grid">
-                <!-- COLUMNA IZQUIERDA: BIO -->
+            <!-- FILA 1: PERFIL PROFESIONAL + SYSTEM STACK -->
+            <div id="stack" class="about-grid">
+                <!-- COLUMNA IZQUIERDA: BIO PROFESIONAL -->
                 <div class="about-bio-wrapper reveal-item">
                     <div class="folder-tab tab-orange">OPERATOR // 01</div>
                     <div class="about-bio-border">
                         <div class="about-bio-card">
                             <h3>SORAYA TERÁN PÉREZ</h3>
-                            <p class="about-role">Desarrolladora Web Junior</p>
-                            <p class="about-degree">CFGS DAW</p>
+                            <p class="about-role">Desarrolladora Web Junior · Front-End &amp; CMS</p>
+                            <p class="about-degree">[ CFGS DESARROLLO DE APLICACIONES WEB ]</p>
 
                             <p class="about-text">
-                                Del diseño a la web: estructura, código y detalle. Un perfil junior con ganas de seguir construyendo y aprendiendo, combinando desarrollo front-end a medida con gestores de contenido como WordPress y Drupal.
+                                Me apasiona convertir una idea o un diseño en una interfaz real, ordenada y agradable de usar. Como desarrolladora junior formada en DAW, combino una base sólida de maquetación y JavaScript con el dominio de gestores de contenido como WordPress y Drupal.
+                            </p>
+                            <p class="about-text about-text-second">
+                                No busco solo que una página "funcione": me fijo en la jerarquía visual, la limpieza del código, la experiencia en móvil y los pequeños detalles que hacen que un proyecto se sienta cuidado.
                             </p>
 
                             <div class="bio-divider"></div>
 
                             <ul class="bio-specs">
-                                <li><span>&gt; ROL</span><strong>DESARROLLO WEB JUNIOR</strong></li>
+                                <li><span>&gt; ROL</span><strong>DESARROLLADORA WEB JUNIOR</strong></li>
                                 <li><span>&gt; FORMACIÓN</span><strong>CFGS DAW</strong></li>
-                                <li><span>&gt; ENFOQUE</span><strong>FRONTEND + CMS</strong></li>
-                                <li><span>&gt; SECTOR</span><strong>NAVEGACIÓN / INTERFAZ</strong></li>
+                                <li><span>&gt; ESPECIALIDAD</span><strong>FRONT-END + WORDPRESS &amp; DRUPAL</strong></li>
+                                <li><span>&gt; DISPONIBILIDAD</span><strong>ABIERTA A PROYECTOS Y EQUIPO</strong></li>
                             </ul>
                         </div>
                     </div>
@@ -423,40 +356,40 @@
                     <div class="stack-panel-border">
                         <div class="stack-panel">
                             <div class="stack-header">
-                                <span>SYSTEM // STACK</span>
-                                <span>06</span>
+                                <span>SYSTEM // STACK &amp; HERRAMIENTAS</span>
+                                <span>06 MODULES</span>
                             </div>
 
                             <div class="stack-grid">
                                 <div class="stack-tile accent-orange">
-                                    <span class="stack-num">01</span>
+                                    <span class="stack-num">01 // CORE</span>
                                     <h4>HTML5 / CSS3</h4>
-                                    <p>ESTRUCTURA + ESTILOS</p>
+                                    <p>SEMÁNTICA, GRID, FLEXBOX &amp; ANIMACIONES</p>
                                 </div>
                                 <div class="stack-tile accent-yellow">
-                                    <span class="stack-num">02</span>
+                                    <span class="stack-num">02 // LOGIC</span>
                                     <h4>JavaScript</h4>
-                                    <p>LÓGICA + INTERACCIÓN</p>
+                                    <p>DOM, EVENTOS &amp; INTERACTIVIDAD</p>
                                 </div>
                                 <div class="stack-tile accent-purple">
-                                    <span class="stack-num">03</span>
+                                    <span class="stack-num">03 // CMS</span>
                                     <h4>WordPress</h4>
-                                    <p>GESTIÓN DE CONTENIDO</p>
+                                    <p>TEMAS, CONTENIDOS &amp; PERSONALIZACIÓN</p>
                                 </div>
                                 <div class="stack-tile accent-blue">
-                                    <span class="stack-num">04</span>
+                                    <span class="stack-num">04 // CMS</span>
                                     <h4>Drupal</h4>
-                                    <p>ARQUITECTURA CMS</p>
+                                    <p>ARQUITECTURA MODULAR &amp; VISTAS</p>
                                 </div>
                                 <div class="stack-tile accent-orange">
-                                    <span class="stack-num">05</span>
+                                    <span class="stack-num">05 // WORKFLOW</span>
                                     <h4>Git / GitHub</h4>
-                                    <p>CONTROL DE VERSIONES</p>
+                                    <p>CONTROL DE VERSIONES &amp; DESPLIEGUE</p>
                                 </div>
                                 <div class="stack-tile accent-purple">
-                                    <span class="stack-num">06</span>
-                                    <h4>Figma</h4>
-                                    <p>DISEÑO DE INTERFAZ</p>
+                                    <span class="stack-num">06 // DESIGN</span>
+                                    <h4>Figma / UI</h4>
+                                    <p>PROTOTIPADO &amp; SISTEMAS VISUALES</p>
                                 </div>
                             </div>
                         </div>
@@ -464,24 +397,55 @@
                 </div>
             </div>
 
-            <!-- SUB-BLOQUE ÉPICO: K9 CREW / FICHA GALÁCTICA DE PERROS -->
+            <!-- FILA 2: PROTOCOLO DE TRABAJO (3 PASOS PROFESIONALES) -->
+            <div class="workflow-grid reveal-item">
+                <div class="workflow-card wf-purple">
+                    <div class="wf-top">
+                        <span>FASE // 01</span>
+                        <strong>ESTRUCTURA &amp; UI</strong>
+                    </div>
+                    <p>Analizo qué necesita comunicar la web, defino una arquitectura clara y diseño bocetos limpios antes de escribir código.</p>
+                </div>
+
+                <div class="workflow-card wf-blue">
+                    <div class="wf-top">
+                        <span>FASE // 02</span>
+                        <strong>CONSTRUCCIÓN &amp; CMS</strong>
+                    </div>
+                    <p>Desarrollo el front-end responsive o configuro WordPress/Drupal con estructura escalable y fácil de mantener.</p>
+                </div>
+
+                <div class="workflow-card wf-yellow">
+                    <div class="wf-top">
+                        <span>FASE // 03</span>
+                        <strong>DETALLE &amp; CONTROL</strong>
+                    </div>
+                    <p>Reviso velocidad, adaptación móvil, micro-interacciones y versionado en GitHub para entregar un resultado sólido.</p>
+                </div>
+            </div>
+
+            <!-- FILA 3: PATRULLA CANINA CON INTRODUCCIÓN PERSONAL + FICHAS GALÁCTICAS -->
             <div class="crew-box-wrapper reveal-item">
                 <div class="crew-box-border">
                     <div class="crew-box">
                         <div class="crew-header">
                             <div>
-                                <span class="crew-tag">// STARFLEET_K9_UNIT — BRIDGE COMPANIONS</span>
-                                <h3>TRIPULACIÓN CANINA // ARCHIVO DE BORDO</h3>
+                                <span class="crew-tag">// STARFLEET_K9_UNIT — MI EQUIPO FUERA DE PANTALLA</span>
+                                <h3>PATRULLA CANINA // TRIPULACIÓN DE A BORDO</h3>
                             </div>
                             <span class="crew-status">[ PASA EL RATÓN PARA ESCANEAR FICHA ]</span>
                         </div>
+
+                        <p class="crew-intro">
+                            Detrás de cada línea de código hay una parte de mi vida que lo equilibra todo. Ellos son mis compañeros inseparables, mi cable a tierra después de horas frente a la pantalla y el mejor recordatorio de que las mejores ideas siempre llegan después de un buen paseo.
+                        </p>
 
                         <div class="crew-grid">
                             <!-- PERRO 01 -->
                             <article class="pet-card pet-purple">
                                 <div class="pet-photo-wrap">
                                     <span class="pet-badge">UNIT // K9-ALPHA</span>
-                                    <img src="img/perro-1.png" alt="Compañero canino 01 en la nave">
+                                    <img src="img/perro-1.png" alt="Compañero canino 01">
                                 </div>
                                 <div class="pet-info">
                                     <div class="pet-title-row">
@@ -489,7 +453,7 @@
                                         <span>[ RANGO: MORAL_OFFICER ]</span>
                                     </div>
                                     <p class="pet-bio">
-                                        Oficial de moral y vigilancia de periférico. Activa el modo siesta táctica cuando el CSS se vuelve rebelde.
+                                        Oficial de moral y vigilancia de periférico. Activa el modo siesta táctica justo cuando el CSS se pone intenso.
                                     </p>
                                     <div class="pet-hud-dossier">
                                         <div><span>SECTOR:</span> <strong>PUENTE DE MANDO / SOFÁ</strong></div>
@@ -503,7 +467,7 @@
                             <article class="pet-card pet-yellow">
                                 <div class="pet-photo-wrap">
                                     <span class="pet-badge">UNIT // K9-OMEGA</span>
-                                    <img src="img/perro-2.png" alt="Compañero canino 02 en la nave">
+                                    <img src="img/perro-2.png" alt="Compañero canino 02">
                                 </div>
                                 <div class="pet-info">
                                     <div class="pet-title-row">
@@ -511,11 +475,11 @@
                                         <span>[ RANGO: RADAR_SCOUT ]</span>
                                     </div>
                                     <p class="pet-bio">
-                                        Exploradora de largo alcance y detectora de pasos hacia la cocina. Supervisa cada commit desde primera línea.
+                                        Exploradora de largo alcance y detectora oficial de descansos. Supervisa cada commit desde primera línea.
                                     </p>
                                     <div class="pet-hud-dossier">
                                         <div><span>SECTOR:</span> <strong>SENSOR ÓPTICO / ESCRITORIO</strong></div>
-                                        <div><span>HABILIDAD:</span> <strong>ALERTA DE SNACKS EN TIEMPO REAL</strong></div>
+                                        <div><span>HABILIDAD:</span> <strong>ALERTA DE PASEO EN TIEMPO REAL</strong></div>
                                         <div><span>PROTOCOLO:</span> <strong>MIRADA LÁSER HASTA QUE JUEGUES</strong></div>
                                     </div>
                                 </div>
@@ -539,7 +503,7 @@
                 <div class="contact-channels reveal-item">
                     <h3>¿CONSTRUIMOS ALGO?</h3>
                     <p class="contact-intro">
-                        Una idea, una colaboración o el siguiente reto.<br>
+                        Una idea, una colaboración o una oportunidad en equipo.<br>
                         La conversación empieza aquí.
                     </p>
 
@@ -578,7 +542,7 @@
                         </a>
                     </div>
 
-                    <p class="channel-note">[ ENLACES PENDIENTES DE CONFIGURAR ]</p>
+                    <p class="channel-note">[ ENLACES LISTOS PARA PERSONALIZAR ]</p>
                 </div>
 
                 <!-- DERECHA: FORMULARIO -->
