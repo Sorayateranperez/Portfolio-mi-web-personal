@@ -313,19 +313,21 @@
             </div>
         </section>
 
-        <!-- ================= SOBRE MÍ // PERFIL PRINCIPAL & STACK SLIDER ================= -->
+        <!-- ================= SOBRE MÍ // PERFIL PRINCIPAL, STACK & SELECTOR K9 ================= -->
         <section id="sobre-mi" class="section-block reveal-section">
             <div class="section-header-row">
                 <h2 class="section-heading">SOBRE MÍ // PERFIL</h2>
-                <span class="section-subtag">// OPERADOR PRINCIPAL, STACK DESLIZABLE &amp; UNIDAD K9</span>
+                <span class="section-subtag">// OPERADOR PRINCIPAL, STACK DESLIZABLE &amp; SELECTOR K9</span>
             </div>
             <div class="full-divider"></div>
 
-            <!-- BLOQUE GRANDE PRINCIPAL: TU INFORMACIÓN COMPLETA -->
+            <!-- BLOQUE GRANDE PRINCIPAL CON ANIMACIONES ÉPICAS -->
             <div class="about-main-wrapper reveal-item">
                 <div class="folder-tab tab-orange">OPERATOR // 01 — DOSSIER PRINCIPAL</div>
                 <div class="about-main-border">
                     <div class="about-main-card">
+                        <div class="about-shine" aria-hidden="true"></div>
+
                         <div class="about-hero-grid">
                             <div class="about-portrait-box">
                                 <div class="portrait-hud-top">
@@ -333,6 +335,7 @@
                                     <span>[ DAW ]</span>
                                 </div>
                                 <div class="portrait-img-wrap">
+                                    <div class="portrait-scan" aria-hidden="true"></div>
                                     <span class="corner tl"></span>
                                     <span class="corner tr"></span>
                                     <span class="corner bl"></span>
@@ -440,151 +443,136 @@
                 </div>
             </div>
 
-            <!-- PATRULLA CANINA: FICHA INDIVIDUAL TIPO VIDEOJUEGO CON FLECHAS -->
+            <!-- SELECTOR DE PERSONAJE TIPO VIDEOJUEGO: FICHA GRANDE CENTRAL CON FLECHAS <-- / --> -->
             <div class="crew-box-wrapper reveal-item">
                 <div class="crew-box-border">
                     <div class="crew-box">
                         <div class="crew-header">
                             <div>
-                                <span class="crew-tag">// STARFLEET_K9_UNIT — LO MÁS IMPORTANTE EN TIERRA</span>
-                                <h3>PATRULLA CANINA // FICHA DE UNIDAD</h3>
+                                <span class="crew-tag">// CHARACTER_SELECT — LO MÁS IMPORTANTE EN TIERRA</span>
+                                <h3>PATRULLA CANINA // ELIGE UN COMPAÑERO</h3>
                             </div>
-                            <span id="petCounter" class="crew-status">[ UNIDAD 01 / 03 ]</span>
+                            <span id="petCounter" class="crew-status">[ PLAYER 01 / 03 ]</span>
                         </div>
 
                         <p class="crew-intro">
-                            Fuera del código y las pantallas, mi patrulla canina es lo más importante para mí: mi equipo de apoyo, mi calma diaria y quienes me acompañan en cada etapa. Pasa las fichas con las flechas y coloca el cursor sobre la imagen para ampliar el visor.
+                            Más allá del código y las pantallas, mi patrulla canina es lo más importante para mí: mi refugio, mi alegría diaria y quienes me acompañan en cada momento. Usa las flechas a los lados para ir pasando la ficha grande y elegir con quién quieres "jugar".
                         </p>
 
-                        <div class="game-carousel-shell">
-                            <button type="button" id="petPrevBtn" class="game-nav-btn" aria-label="Ficha anterior">‹</button>
+                        <div class="char-select-arena">
+                            <button type="button" id="petPrevBtn" class="char-arrow-btn" aria-label="Anterior mascota">←</button>
 
-                            <div class="game-character-stage">
+                            <div class="char-spotlight-stage">
                                 <!-- FICHA 01 -->
-                                <article class="game-card is-active theme-p">
-                                    <div class="game-visual-col">
-                                        <div class="game-hud-bar">
-                                            <span>ID: K9-ALPHA</span>
-                                            <span>LVL 99</span>
-                                        </div>
-                                        <div class="game-img-zoom-box">
-                                            <div class="game-scanline" aria-hidden="true"></div>
-                                            <img src="img/perro-1.png" alt="Unidad Canina 01">
-                                        </div>
-                                        <div class="game-img-caption">[ PASA EL RATÓN PARA AMPLIAR VISOR ]</div>
+                                <article class="char-sheet is-active theme-p">
+                                    <div class="char-top-strip">
+                                        <span>UNIT // K9-01</span>
+                                        <span>READY // P1</span>
                                     </div>
 
-                                    <div class="game-stats-col">
-                                        <div class="game-unit-tag">// CLASE: OFICIAL DE MORAL Y DESCANSO</div>
-                                        <h4>UNIDAD CANINA 01</h4>
-                                        <p class="game-desc">
-                                            Especialista en vigilancia de sofá y desconexión estratégica cuando el CSS se pone rebelde. Aporta calma absoluta y compañía incondicional.
+                                    <div class="char-portrait-frame">
+                                        <div class="char-scan" aria-hidden="true"></div>
+                                        <img src="img/perro-1.png" alt="Ficha grande de mascota 01">
+                                    </div>
+
+                                    <div class="char-details">
+                                        <div class="char-class-tag">[ CLASE: OFICIAL DE MORAL &amp; SIESTA ]</div>
+                                        <h4>COMPAÑERO 01</h4>
+                                        <p class="char-bio">
+                                            Guardia de sofá y especialista en bajar pulsaciones cuando el código se pone exigente.
                                         </p>
 
-                                        <div class="game-bars">
-                                            <div class="stat-row">
+                                        <div class="char-meter-group">
+                                            <div class="char-meter">
                                                 <span>MORAL</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 100%;"></div></div>
+                                                <div class="meter-bar"><div class="meter-fill" style="width: 100%;"></div></div>
                                                 <strong>MAX</strong>
                                             </div>
-                                            <div class="stat-row">
-                                                <span>SIESTA</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 96%;"></div></div>
-                                                <strong>96%</strong>
-                                            </div>
-                                            <div class="stat-row">
-                                                <span>LEALTAD</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 100%;"></div></div>
-                                                <strong>S+</strong>
+                                            <div class="char-meter">
+                                                <span>TURBO</span>
+                                                <div class="meter-bar"><div class="meter-fill" style="width: 88%;"></div></div>
+                                                <strong>88%</strong>
                                             </div>
                                         </div>
                                     </div>
                                 </article>
 
                                 <!-- FICHA 02 -->
-                                <article class="game-card theme-y">
-                                    <div class="game-visual-col">
-                                        <div class="game-hud-bar">
-                                            <span>ID: K9-OMEGA</span>
-                                            <span>LVL 98</span>
-                                        </div>
-                                        <div class="game-img-zoom-box">
-                                            <div class="game-scanline" aria-hidden="true"></div>
-                                            <img src="img/perro-2.png" alt="Unidad Canina 02">
-                                        </div>
-                                        <div class="game-img-caption">[ PASA EL RATÓN PARA AMPLIAR VISOR ]</div>
+                                <article class="char-sheet theme-y">
+                                    <div class="char-top-strip">
+                                        <span>UNIT // K9-02</span>
+                                        <span>READY // P2</span>
                                     </div>
 
-                                    <div class="game-stats-col">
-                                        <div class="game-unit-tag">// CLASE: EXPLORADORA &amp; RADAR DE PASEOS</div>
-                                        <h4>UNIDAD CANINA 02</h4>
-                                        <p class="game-desc">
-                                            Detecta el fin de una sesión larga a kilómetros de distancia y activa el protocolo de paseo y juego con mirada láser infalible.
+                                    <div class="char-portrait-frame">
+                                        <div class="char-scan" aria-hidden="true"></div>
+                                        <img src="img/perro-2.png" alt="Ficha grande de mascota 02">
+                                    </div>
+
+                                    <div class="char-details">
+                                        <div class="char-class-tag">[ CLASE: SCOUT &amp; RADAR DE PASEOS ]</div>
+                                        <h4>COMPAÑERO 02</h4>
+                                        <p class="char-bio">
+                                            Detecta el fin de cada jornada a la velocidad de la luz y activa el modo aventura y paseo.
                                         </p>
 
-                                        <div class="game-bars">
-                                            <div class="stat-row">
+                                        <div class="char-meter-group">
+                                            <div class="char-meter">
                                                 <span>RADAR</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 99%;"></div></div>
+                                                <div class="meter-bar"><div class="meter-fill" style="width: 99%;"></div></div>
                                                 <strong>99%</strong>
                                             </div>
-                                            <div class="stat-row">
+                                            <div class="char-meter">
                                                 <span>ENERGÍA</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 94%;"></div></div>
-                                                <strong>94%</strong>
-                                            </div>
-                                            <div class="stat-row">
-                                                <span>CARIÑO</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 100%;"></div></div>
-                                                <strong>S+</strong>
+                                                <div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div>
+                                                <strong>95%</strong>
                                             </div>
                                         </div>
                                     </div>
                                 </article>
 
                                 <!-- FICHA 03 -->
-                                <article class="game-card theme-b">
-                                    <div class="game-visual-col">
-                                        <div class="game-hud-bar">
-                                            <span>ID: K9-NOVA</span>
-                                            <span>LVL 97</span>
-                                        </div>
-                                        <div class="game-img-zoom-box">
-                                            <div class="game-scanline" aria-hidden="true"></div>
-                                            <img src="img/perro-3.png" alt="Unidad Canina 03">
-                                        </div>
-                                        <div class="game-img-caption">[ PASA EL RATÓN PARA AMPLIAR VISOR ]</div>
+                                <article class="char-sheet theme-b">
+                                    <div class="char-top-strip">
+                                        <span>UNIT // K9-03</span>
+                                        <span>READY // P3</span>
                                     </div>
 
-                                    <div class="game-stats-col">
-                                        <div class="game-unit-tag">// CLASE: COPILOTO DE GUARDIA</div>
-                                        <h4>UNIDAD CANINA 03</h4>
-                                        <p class="game-desc">
-                                            Guardiana del perímetro y compañera fiel en cada rutina. Siempre presente para celebrar cualquier avance del día.
+                                    <div class="char-portrait-frame">
+                                        <div class="char-scan" aria-hidden="true"></div>
+                                        <img src="img/perro-3.png" alt="Ficha grande de mascota 03">
+                                    </div>
+
+                                    <div class="char-details">
+                                        <div class="char-class-tag">[ CLASE: COPILOTO DE GUARDIA ]</div>
+                                        <h4>COMPAÑERO 03</h4>
+                                        <p class="char-bio">
+                                            Compañero fiel en cada rutina, siempre listo para recibirte con entusiasmo y lealtad total.
                                         </p>
 
-                                        <div class="game-bars">
-                                            <div class="stat-row">
-                                                <span>GUARDIA</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 95%;"></div></div>
-                                                <strong>95%</strong>
-                                            </div>
-                                            <div class="stat-row">
-                                                <span>CALMA</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 92%;"></div></div>
-                                                <strong>92%</strong>
-                                            </div>
-                                            <div class="stat-row">
-                                                <span>EQUIPO</span>
-                                                <div class="stat-track"><div class="stat-fill" style="width: 100%;"></div></div>
+                                        <div class="char-meter-group">
+                                            <div class="char-meter">
+                                                <span>LEALTAD</span>
+                                                <div class="meter-bar"><div class="meter-fill" style="width: 100%;"></div></div>
                                                 <strong>S+</strong>
+                                            </div>
+                                            <div class="char-meter">
+                                                <span>CALMA</span>
+                                                <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
+                                                <strong>92%</strong>
                                             </div>
                                         </div>
                                     </div>
                                 </article>
                             </div>
 
-                            <button type="button" id="petNextBtn" class="game-nav-btn" aria-label="Siguiente ficha">›</button>
+                            <button type="button" id="petNextBtn" class="char-arrow-btn" aria-label="Siguiente mascota">→</button>
+                        </div>
+
+                        <div class="char-roster-dots" aria-label="Selector rápido de unidad">
+                            <button type="button" class="roster-dot is-active" data-pet-index="0">01</button>
+                            <button type="button" class="roster-dot" data-pet-index="1">02</button>
+                            <button type="button" class="roster-dot" data-pet-index="2">03</button>
                         </div>
                     </div>
                 </div>
