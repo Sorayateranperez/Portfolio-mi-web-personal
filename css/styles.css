@@ -200,7 +200,7 @@ body {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(3.8rem, 6.6vw, 5.8rem);
+    font-size: clamp(3.6rem, 6.6vw, 5.8rem);
     line-height: 1.05;
     letter-spacing: -0.5px;
     text-transform: uppercase;
@@ -231,12 +231,14 @@ body {
     justify-content: space-between;
     align-items: center;
     max-width: 580px;
+    gap: 16px;
     margin-bottom: 26px;
 }
 
 .cta-buttons {
     display: flex;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .btn-bevel {
@@ -299,6 +301,7 @@ body {
     height: 34px;
     align-items: flex-end;
     cursor: pointer;
+    flex-shrink: 0;
 }
 .color-bars span {
     width: 5px;
@@ -905,7 +908,7 @@ body {
     color: #666;
 }
 
-/* ================= SOBRE MÍ // BLOQUE PRINCIPAL CON ANIMACIONES ÉPICAS ================= */
+/* ================= SOBRE MÍ // BLOQUE PRINCIPAL GALÁCTICO ================= */
 .about-main-wrapper {
     display: flex;
     flex-direction: column;
@@ -932,7 +935,7 @@ body {
 
 .about-main-wrapper:hover::before {
     transform: translate(10px, 10px);
-    background-color: var(--orange);
+    background-color: var(--purple);
 }
 
 .about-main-wrapper:hover .tab-orange {
@@ -948,17 +951,36 @@ body {
     z-index: 1;
 }
 
-.about-main-card {
-    background-color: var(--bg-cream);
+.about-main-card.galaxy-profile-bg {
+    background:
+        radial-gradient(circle at 82% 18%, rgba(123, 75, 177, 0.22) 0%, transparent 38%),
+        radial-gradient(circle at 18% 85%, rgba(91, 134, 166, 0.22) 0%, transparent 42%),
+        radial-gradient(circle at 55% 50%, rgba(229, 178, 57, 0.14) 0%, transparent 48%),
+        linear-gradient(145deg, #F3EEF9 0%, #F7F4EB 52%, #EBF1F6 100%);
     padding: 26px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 19px), calc(100% - 19px) 100%, 0 100%);
     position: relative;
     overflow: hidden;
-    transition: background-color 0.35s ease;
 }
 
-.about-main-wrapper:hover .about-main-card {
-    background-color: #FCFBF6;
+.galaxy-nebula {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(rgba(123, 75, 177, 0.25) 1.2px, transparent 1.2px),
+        radial-gradient(rgba(229, 178, 57, 0.35) 1px, transparent 1px);
+    background-size: 44px 44px, 72px 72px;
+    background-position: 0 0, 22px 30px;
+    opacity: 0.7;
+    animation: starDrift 18s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes starDrift {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-10px, -6px); }
+    100% { transform: translate(0, 0); }
 }
 
 .about-shine {
@@ -988,7 +1010,7 @@ body {
 }
 
 .about-portrait-box {
-    background-color: #FAF8F2;
+    background-color: rgba(250, 248, 242, 0.94);
     border: 1.5px solid var(--ink-black);
     padding: 10px;
     clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
@@ -1061,17 +1083,37 @@ body {
     margin-bottom: 6px;
 }
 
-.about-main-text h3 {
+/* Animación propia del nombre en el perfil: onda/elevación escalonada por letra */
+.wave-name-heading {
     font-family: var(--font-display);
-    font-size: 2.2rem;
+    font-size: 2.25rem;
     letter-spacing: 0.5px;
-    line-height: 1.05;
+    line-height: 1.1;
     margin-bottom: 10px;
-    transition: letter-spacing 0.35s var(--ease-snappy), color 0.25s ease;
+    cursor: default;
 }
 
-.about-main-wrapper:hover .about-main-text h3 {
-    letter-spacing: 1px;
+.wave-name-heading .wave-char {
+    display: inline-block;
+    transition: transform 0.35s var(--ease-bounce), color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.wave-name-heading .wave-space {
+    display: inline-block;
+    width: 0.32em;
+}
+
+.wave-name-heading.is-waving .wave-char {
+    animation: letterWave 0.55s var(--ease-bounce) both;
+    animation-delay: calc(var(--i) * 24ms);
+    color: var(--purple);
+    text-shadow: 2px 2px 0 var(--yellow);
+}
+
+@keyframes letterWave {
+    0%   { transform: translateY(0) scale(1); }
+    45%  { transform: translateY(-9px) scale(1.12); }
+    100% { transform: translateY(0) scale(1); }
 }
 
 .about-lead {
@@ -1096,7 +1138,7 @@ body {
 }
 
 .meta-chip {
-    background-color: #FAF8F2;
+    background-color: rgba(250, 248, 242, 0.92);
     border: 1.5px solid var(--ink-black);
     padding: 10px 12px;
     transition: transform 0.25s var(--ease-bounce), background-color 0.25s ease;
@@ -1134,7 +1176,7 @@ body {
 }
 
 .phase-box {
-    background-color: #FAF8F2;
+    background-color: rgba(250, 248, 242, 0.92);
     border: 1.5px solid var(--ink-black);
     border-top-width: 4px;
     padding: 12px 14px;
@@ -1310,7 +1352,7 @@ body {
     color: #666;
 }
 
-/* ================= SELECTOR DE PERSONAJE TIPO VIDEOJUEGO ================= */
+/* ================= PATRULLA CANINA: ROTOR CILÍNDRICO 3D ================= */
 .crew-box-wrapper {
     margin-top: 28px;
     position: relative;
@@ -1336,16 +1378,16 @@ body {
     z-index: 1;
 }
 
-.crew-box {
-    background-color: #18161E;
+.crew-box.cosmos-pets-bg {
+    background-color: #211A36;
     color: var(--bg-cream);
     padding: 28px 26px;
     clip-path: polygon(17px 0, 100% 0, 100% calc(100% - 17px), calc(100% - 17px) 100%, 0 100%, 0 17px);
     background-image:
-        radial-gradient(rgba(229, 178, 57, 0.24) 1px, transparent 1px),
-        radial-gradient(rgba(123, 75, 177, 0.28) 1px, transparent 1px);
-    background-size: 36px 36px, 58px 58px;
-    background-position: 0 0, 18px 22px;
+        radial-gradient(circle at 15% 20%, rgba(230, 138, 46, 0.22) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(91, 134, 166, 0.28) 0%, transparent 42%),
+        radial-gradient(rgba(229, 178, 57, 0.26) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 42px 42px;
 }
 
 .crew-header {
@@ -1387,19 +1429,17 @@ body {
     line-height: 1.58;
     color: #EAE5F5;
     max-width: 920px;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
     padding-left: 12px;
     border-left: 3px solid var(--yellow);
 }
 
-/* Arena central con flechas <-- y --> como en el boceto */
 .char-select-arena {
     display: grid;
-    grid-template-columns: 54px minmax(0, 520px) 54px;
+    grid-template-columns: 54px minmax(0, 620px) 54px;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    perspective: 1100px;
+    gap: 20px;
 }
 
 .char-arrow-btn {
@@ -1415,6 +1455,7 @@ body {
     box-shadow: 4px 4px 0 var(--ink-black);
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
     transition: transform 0.22s var(--ease-bounce), background-color 0.2s ease, color 0.2s ease;
+    z-index: 5;
 }
 
 .char-arrow-btn:hover {
@@ -1427,21 +1468,38 @@ body {
     transform: translate(0, 0) scale(0.96);
 }
 
-.char-spotlight-stage {
-    position: relative;
+/* Escenario cilíndrico 3D */
+.cylinder-viewport {
+    perspective: 1300px;
+    overflow: hidden;
+    padding: 18px 10px 24px;
 }
 
-/* Ficha grande inclinada estilo tarjeta de personaje */
+.cylinder-stage {
+    position: relative;
+    min-height: 455px;
+    transform-style: preserve-3d;
+}
+
 .char-sheet {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 470px;
     background-color: var(--bg-cream);
     color: var(--ink-black);
     border: 2px solid var(--ink-black);
     padding: 18px;
-    transform: rotate(-1.6deg);
-    box-shadow: 10px 10px 0 var(--purple);
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
-    transition: transform 0.35s var(--ease-bounce), box-shadow 0.35s ease;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(-50%, 0, -260px) rotateY(48deg) scale(0.82);
+    transition:
+        transform 0.62s var(--ease-snappy),
+        opacity 0.45s ease,
+        box-shadow 0.35s ease;
+    box-shadow: 10px 10px 0 var(--purple);
 }
 
 .char-sheet.theme-y {
@@ -1452,24 +1510,32 @@ body {
     box-shadow: 10px 10px 0 var(--blue);
 }
 
-.char-sheet.is-active {
-    display: block;
-    animation: charSelectPop 0.42s var(--ease-bounce);
+/* Ficha centrada en primera plana */
+.char-sheet.pos-center {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 4;
+    transform: translate3d(-50%, 0, 40px) rotateY(0deg) rotateZ(-1.2deg) scale(1);
 }
 
-.char-sheet.is-active:hover {
-    transform: rotate(0deg) translateY(-4px) scale(1.015);
+.char-sheet.pos-center:hover {
+    transform: translate3d(-50%, -5px, 60px) rotateY(0deg) rotateZ(0deg) scale(1.015);
 }
 
-@keyframes charSelectPop {
-    0% {
-        opacity: 0;
-        transform: rotate(-6deg) scale(0.92) translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: rotate(-1.6deg) scale(1) translateY(0);
-    }
+/* Ficha a la izquierda girando en el cilindro */
+.char-sheet.pos-left {
+    opacity: 0.38;
+    pointer-events: none;
+    z-index: 2;
+    transform: translate3d(-96%, 12px, -180px) rotateY(34deg) scale(0.84);
+}
+
+/* Ficha a la derecha girando en el cilindro */
+.char-sheet.pos-right {
+    opacity: 0.38;
+    pointer-events: none;
+    z-index: 2;
+    transform: translate3d(-4%, 12px, -180px) rotateY(-34deg) scale(0.84);
 }
 
 .char-top-strip {
@@ -1490,7 +1556,7 @@ body {
 
 .char-portrait-frame {
     position: relative;
-    height: 250px;
+    height: 225px;
     overflow: hidden;
     border: 1.5px solid var(--ink-black);
     background-color: #23202C;
@@ -1544,14 +1610,14 @@ body {
 
 .char-details h4 {
     font-family: var(--font-display);
-    font-size: 1.9rem;
+    font-size: 1.85rem;
     letter-spacing: 0.4px;
     line-height: 1.05;
     margin-bottom: 6px;
 }
 
 .char-bio {
-    font-size: 0.84rem;
+    font-size: 0.83rem;
     line-height: 1.5;
     color: #333;
     margin-bottom: 14px;
@@ -1596,12 +1662,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .roster-dot {
     padding: 5px 14px;
-    background-color: #242030;
+    background-color: #2E2549;
     color: var(--bg-cream);
     border: 1.5px solid rgba(247, 244, 235, 0.35);
     font-family: var(--font-mono);
@@ -1874,21 +1940,46 @@ body {
     transform: translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE TABLET & MÓVIL ================= */
 @media (max-width: 1120px) {
     .navbar { flex-wrap: wrap; }
     .nav-bar-purple { width: 100%; }
 }
 
 @media (max-width: 960px) {
-    .hero-section { grid-template-columns: 1fr; }
-    .dossier-card { grid-template-columns: 1fr; }
-    .about-hero-grid { grid-template-columns: 1fr; }
+    .hero-section { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 28px; }
+    .dossier-card { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+    .about-hero-grid { grid-template-columns: 1fr; gap: 20px; }
     .about-meta-grid { grid-template-columns: 1fr; }
     .about-phases-row { grid-template-columns: 1fr; }
     .mini-stack-card { flex: 0 0 calc(50% - 6px); }
     .char-select-arena { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 10px; }
-    .char-arrow-btn { width: 44px; height: 52px; }
+    .char-arrow-btn { width: 44px; height: 52px; font-size: 1.15rem; }
     .contact-grid { grid-template-columns: 1fr; }
     .form-row-2 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .main-container { padding: 0 16px 36px; }
+    .navbar { padding: 16px 0 14px; }
+    .brand-title { font-size: 1.7rem; }
+    .nav-bar-purple { padding: 14px 14px 10px; }
+    .nav-links { gap: 8px 10px; font-size: 0.62rem; }
+    .hero-title { font-size: clamp(2.85rem, 13vw, 3.8rem); margin-bottom: 14px; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-code { font-size: 0.62rem; line-height: 1.5; margin-bottom: 20px; }
+    .hero-actions { flex-direction: column; align-items: stretch; max-width: 100%; gap: 16px; }
+    .cta-buttons { width: 100%; gap: 10px; }
+    .btn-bevel { flex: 1 1 0; width: auto; padding: 12px 14px; font-size: 0.74rem; }
+    .color-bars { align-self: flex-end; height: 26px; }
+    .id-card-inner { padding: 14px; }
+    .id-body { grid-template-columns: 24px 1fr; gap: 6px; }
+    .dots-matrix { font-size: 0.45rem; }
+    .section-heading { font-size: 1.85rem; }
+    .tab-orange { width: auto; max-width: 100%; }
+    .wave-name-heading { font-size: 1.75rem; }
+    .mini-stack-card { flex: 0 0 calc(82% - 6px); }
+    .cylinder-stage { min-height: 495px; }
+    .char-sheet { padding: 14px; }
+    .char-portrait-frame { height: 190px; }
 }
