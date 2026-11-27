@@ -313,25 +313,26 @@
             </div>
         </section>
 
-        <!-- ================= SOBRE MÍ // PERFIL PRINCIPAL, STACK & SELECTOR K9 ================= -->
+        <!-- ================= SOBRE MÍ // PERFIL GALÁCTICO, STACK & CILINDRO K9 ================= -->
         <section id="sobre-mi" class="section-block reveal-section">
             <div class="section-header-row">
                 <h2 class="section-heading">SOBRE MÍ // PERFIL</h2>
-                <span class="section-subtag">// OPERADOR PRINCIPAL, STACK DESLIZABLE &amp; SELECTOR K9</span>
+                <span class="section-subtag">// ORBITA OPERADOR, STACK DESLIZABLE &amp; CILINDRO K9</span>
             </div>
             <div class="full-divider"></div>
 
-            <!-- BLOQUE GRANDE PRINCIPAL CON ANIMACIONES ÉPICAS -->
+            <!-- BLOQUE GRANDE PRINCIPAL: FONDO GALÁCTICO + ANIMACIÓN DE ONDA EN NOMBRE -->
             <div class="about-main-wrapper reveal-item">
-                <div class="folder-tab tab-orange">OPERATOR // 01 — DOSSIER PRINCIPAL</div>
+                <div class="folder-tab tab-orange">OPERATOR // 01 — ORBITA PERSONAL</div>
                 <div class="about-main-border">
-                    <div class="about-main-card">
+                    <div class="about-main-card galaxy-profile-bg">
+                        <div class="galaxy-nebula" aria-hidden="true"></div>
                         <div class="about-shine" aria-hidden="true"></div>
 
                         <div class="about-hero-grid">
                             <div class="about-portrait-box">
                                 <div class="portrait-hud-top">
-                                    <span>CAM_01 // LIVE_BIO</span>
+                                    <span>CAM_01 // ORBIT_BIO</span>
                                     <span>[ DAW ]</span>
                                 </div>
                                 <div class="portrait-img-wrap">
@@ -346,7 +347,7 @@
 
                             <div class="about-main-text">
                                 <div class="about-kicker">// DESARROLLADORA WEB JUNIOR · CFGS DESARROLLO DE APLICACIONES WEB</div>
-                                <h3>SORAYA TERÁN PÉREZ</h3>
+                                <h3 id="profileWaveName" class="wave-name-heading" aria-label="SORAYA TERÁN PÉREZ">SORAYA TERÁN PÉREZ</h3>
                                 <p class="about-lead">
                                     Me apasiona construir interfaces web con carácter, orden y buena presencia. Combino maquetación front-end a medida (HTML5, CSS3, JavaScript) con desarrollo y estructuración en gestores de contenido como WordPress y Drupal.
                                 </p>
@@ -443,127 +444,129 @@
                 </div>
             </div>
 
-            <!-- SELECTOR DE PERSONAJE TIPO VIDEOJUEGO: FICHA GRANDE CENTRAL CON FLECHAS <-- / --> -->
+            <!-- PATRULLA CANINA: CARRUSEL CILÍNDRICO 3D CON FICHA GRANDE EN PRIMERA PLANA -->
             <div class="crew-box-wrapper reveal-item">
                 <div class="crew-box-border">
-                    <div class="crew-box">
+                    <div class="crew-box cosmos-pets-bg">
                         <div class="crew-header">
                             <div>
-                                <span class="crew-tag">// CHARACTER_SELECT — LO MÁS IMPORTANTE EN TIERRA</span>
-                                <h3>PATRULLA CANINA // ELIGE UN COMPAÑERO</h3>
+                                <span class="crew-tag">// STARFLEET_K9_CYLINDER — LO MÁS IMPORTANTE EN TIERRA</span>
+                                <h3>PATRULLA CANINA // ROTOR DE UNIDADES</h3>
                             </div>
                             <span id="petCounter" class="crew-status">[ PLAYER 01 / 03 ]</span>
                         </div>
 
                         <p class="crew-intro">
-                            Más allá del código y las pantallas, mi patrulla canina es lo más importante para mí: mi refugio, mi alegría diaria y quienes me acompañan en cada momento. Usa las flechas a los lados para ir pasando la ficha grande y elegir con quién quieres "jugar".
+                            Más allá del código y las pantallas, mi patrulla canina es lo más importante para mí: mi refugio, mi alegría diaria y quienes me acompañan en cada momento. Pasa las fichas con las flechas para ver cómo giran en el cilindro y pasan a primera plana.
                         </p>
 
                         <div class="char-select-arena">
                             <button type="button" id="petPrevBtn" class="char-arrow-btn" aria-label="Anterior mascota">←</button>
 
-                            <div class="char-spotlight-stage">
-                                <!-- FICHA 01 -->
-                                <article class="char-sheet is-active theme-p">
-                                    <div class="char-top-strip">
-                                        <span>UNIT // K9-01</span>
-                                        <span>READY // P1</span>
-                                    </div>
+                            <div class="cylinder-viewport">
+                                <div id="petsCylinder" class="cylinder-stage">
+                                    <!-- FICHA 01 -->
+                                    <article class="char-sheet theme-p" data-index="0">
+                                        <div class="char-top-strip">
+                                            <span>UNIT // K9-01</span>
+                                            <span>READY // P1</span>
+                                        </div>
 
-                                    <div class="char-portrait-frame">
-                                        <div class="char-scan" aria-hidden="true"></div>
-                                        <img src="img/perro-1.png" alt="Ficha grande de mascota 01">
-                                    </div>
+                                        <div class="char-portrait-frame">
+                                            <div class="char-scan" aria-hidden="true"></div>
+                                            <img src="img/perro-1.png" alt="Ficha grande de mascota 01">
+                                        </div>
 
-                                    <div class="char-details">
-                                        <div class="char-class-tag">[ CLASE: OFICIAL DE MORAL &amp; SIESTA ]</div>
-                                        <h4>COMPAÑERO 01</h4>
-                                        <p class="char-bio">
-                                            Guardia de sofá y especialista en bajar pulsaciones cuando el código se pone exigente.
-                                        </p>
+                                        <div class="char-details">
+                                            <div class="char-class-tag">[ CLASE: OFICIAL DE MORAL &amp; SIESTA ]</div>
+                                            <h4>COMPAÑERO 01</h4>
+                                            <p class="char-bio">
+                                                Guardia de sofá y especialista en bajar pulsaciones cuando el código se pone exigente.
+                                            </p>
 
-                                        <div class="char-meter-group">
-                                            <div class="char-meter">
-                                                <span>MORAL</span>
-                                                <div class="meter-bar"><div class="meter-fill" style="width: 100%;"></div></div>
-                                                <strong>MAX</strong>
-                                            </div>
-                                            <div class="char-meter">
-                                                <span>TURBO</span>
-                                                <div class="meter-bar"><div class="meter-fill" style="width: 88%;"></div></div>
-                                                <strong>88%</strong>
+                                            <div class="char-meter-group">
+                                                <div class="char-meter">
+                                                    <span>MORAL</span>
+                                                    <div class="meter-bar"><div class="meter-fill" style="width: 100%;"></div></div>
+                                                    <strong>MAX</strong>
+                                                </div>
+                                                <div class="char-meter">
+                                                    <span>TURBO</span>
+                                                    <div class="meter-bar"><div class="meter-fill" style="width: 88%;"></div></div>
+                                                    <strong>88%</strong>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </article>
+                                    </article>
 
-                                <!-- FICHA 02 -->
-                                <article class="char-sheet theme-y">
-                                    <div class="char-top-strip">
-                                        <span>UNIT // K9-02</span>
-                                        <span>READY // P2</span>
-                                    </div>
+                                    <!-- FICHA 02 -->
+                                    <article class="char-sheet theme-y" data-index="1">
+                                        <div class="char-top-strip">
+                                            <span>UNIT // K9-02</span>
+                                            <span>READY // P2</span>
+                                        </div>
 
-                                    <div class="char-portrait-frame">
-                                        <div class="char-scan" aria-hidden="true"></div>
-                                        <img src="img/perro-2.png" alt="Ficha grande de mascota 02">
-                                    </div>
+                                        <div class="char-portrait-frame">
+                                            <div class="char-scan" aria-hidden="true"></div>
+                                            <img src="img/perro-2.png" alt="Ficha grande de mascota 02">
+                                        </div>
 
-                                    <div class="char-details">
-                                        <div class="char-class-tag">[ CLASE: SCOUT &amp; RADAR DE PASEOS ]</div>
-                                        <h4>COMPAÑERO 02</h4>
-                                        <p class="char-bio">
-                                            Detecta el fin de cada jornada a la velocidad de la luz y activa el modo aventura y paseo.
-                                        </p>
+                                        <div class="char-details">
+                                            <div class="char-class-tag">[ CLASE: SCOUT &amp; RADAR DE PASEOS ]</div>
+                                            <h4>COMPAÑERO 02</h4>
+                                            <p class="char-bio">
+                                                Detecta el fin de cada jornada a la velocidad de la luz y activa el modo aventura y paseo.
+                                            </p>
 
-                                        <div class="char-meter-group">
-                                            <div class="char-meter">
-                                                <span>RADAR</span>
-                                                <div class="meter-bar"><div class="meter-fill" style="width: 99%;"></div></div>
-                                                <strong>99%</strong>
-                                            </div>
-                                            <div class="char-meter">
-                                                <span>ENERGÍA</span>
-                                                <div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div>
-                                                <strong>95%</strong>
+                                            <div class="char-meter-group">
+                                                <div class="char-meter">
+                                                    <span>RADAR</span>
+                                                    <div class="meter-bar"><div class="meter-fill" style="width: 99%;"></div></div>
+                                                    <strong>99%</strong>
+                                                </div>
+                                                <div class="char-meter">
+                                                    <span>ENERGÍA</span>
+                                                    <div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div>
+                                                    <strong>95%</strong>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </article>
+                                    </article>
 
-                                <!-- FICHA 03 -->
-                                <article class="char-sheet theme-b">
-                                    <div class="char-top-strip">
-                                        <span>UNIT // K9-03</span>
-                                        <span>READY // P3</span>
-                                    </div>
+                                    <!-- FICHA 03 -->
+                                    <article class="char-sheet theme-b" data-index="2">
+                                        <div class="char-top-strip">
+                                            <span>UNIT // K9-03</span>
+                                            <span>READY // P3</span>
+                                        </div>
 
-                                    <div class="char-portrait-frame">
-                                        <div class="char-scan" aria-hidden="true"></div>
-                                        <img src="img/perro-3.png" alt="Ficha grande de mascota 03">
-                                    </div>
+                                        <div class="char-portrait-frame">
+                                            <div class="char-scan" aria-hidden="true"></div>
+                                            <img src="img/perro-3.png" alt="Ficha grande de mascota 03">
+                                        </div>
 
-                                    <div class="char-details">
-                                        <div class="char-class-tag">[ CLASE: COPILOTO DE GUARDIA ]</div>
-                                        <h4>COMPAÑERO 03</h4>
-                                        <p class="char-bio">
-                                            Compañero fiel en cada rutina, siempre listo para recibirte con entusiasmo y lealtad total.
-                                        </p>
+                                        <div class="char-details">
+                                            <div class="char-class-tag">[ CLASE: COPILOTO DE GUARDIA ]</div>
+                                            <h4>COMPAÑERO 03</h4>
+                                            <p class="char-bio">
+                                                Compañero fiel en cada rutina, siempre listo para recibirte con entusiasmo y lealtad total.
+                                            </p>
 
-                                        <div class="char-meter-group">
-                                            <div class="char-meter">
-                                                <span>LEALTAD</span>
-                                                <div class="meter-bar"><div class="meter-fill" style="width: 100%;"></div></div>
-                                                <strong>S+</strong>
-                                            </div>
-                                            <div class="char-meter">
-                                                <span>CALMA</span>
-                                                <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
-                                                <strong>92%</strong>
+                                            <div class="char-meter-group">
+                                                <div class="char-meter">
+                                                    <span>LEALTAD</span>
+                                                    <div class="meter-bar"><div class="meter-fill" style="width: 100%;"></div></div>
+                                                    <strong>S+</strong>
+                                                </div>
+                                                <div class="char-meter">
+                                                    <span>CALMA</span>
+                                                    <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
+                                                    <strong>92%</strong>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                </div>
                             </div>
 
                             <button type="button" id="petNextBtn" class="char-arrow-btn" aria-label="Siguiente mascota">→</button>
