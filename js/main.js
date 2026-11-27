@@ -18,6 +18,7 @@ const heroRight = document.querySelector('.hero-right');
 
 if (idCard && heroRight) {
     heroRight.addEventListener('mousemove', (e) => {
+        if (window.innerWidth <= 768) return;
         const rect = idCard.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -39,6 +40,7 @@ if (idCard && heroRight) {
 // 3. Efecto 3D sutil en los expedientes de proyectos al mover el ratón
 document.querySelectorAll('.dossier-wrapper').forEach((dossier) => {
     dossier.addEventListener('mousemove', (e) => {
+        if (window.innerWidth <= 768) return;
         const rect = dossier.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
@@ -54,6 +56,7 @@ document.querySelectorAll('.dossier-wrapper').forEach((dossier) => {
 // 4. Efecto magnético sutil en los botones principales
 document.querySelectorAll('.btn-bevel').forEach((btn) => {
     btn.addEventListener('mousemove', (e) => {
+        if (window.innerWidth <= 768) return;
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
@@ -66,7 +69,7 @@ document.querySelectorAll('.btn-bevel').forEach((btn) => {
     });
 });
 
-// 5. Efecto de decodificación en títulos al hacer hover
+// 5. Efecto de decodificación en títulos de proyectos al hacer hover
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789//_#';
 
 function scrambleText(element) {
@@ -100,14 +103,44 @@ document.querySelectorAll('.dossier-wrapper').forEach((card) => {
     }
 });
 
-// Scramble también en el título de SOBRE MÍ al pasar por su tarjeta
+// 6. Animación propia para el nombre en tu perfil personal (onda escalonada por letra)
+const profileWaveName = document.getElementById('profileWaveName');
 const aboutMain = document.querySelector('.about-main-wrapper');
-const aboutTitle = document.querySelector('.about-main-text h3');
-if (aboutMain && aboutTitle) {
-    aboutMain.addEventListener('mouseenter', () => scrambleText(aboutTitle));
+
+if (profileWaveName) {
+    const rawName = profileWaveName.textContent.trim();
+    profileWaveName.innerHTML = '';
+
+    let charIndex = 0;
+    Array.from(rawName).forEach((ch) => {
+        if (ch === ' ') {
+            const spaceSpan = document.createElement('span');
+            spaceSpan.className = 'wave-space';
+            spaceSpan.innerHTML = '&nbsp;';
+            profileWaveName.appendChild(spaceSpan);
+        } else {
+            const span = document.createElement('span');
+            span.className = 'wave-char';
+            span.style.setProperty('--i', charIndex);
+            span.textContent = ch;
+            profileWaveName.appendChild(span);
+            charIndex++;
+        }
+    });
+
+    const triggerWave = () => {
+        profileWaveName.classList.remove('is-waving');
+        void profileWaveName.offsetWidth;
+        profileWaveName.classList.add('is-waving');
+    };
+
+    if (aboutMain) {
+        aboutMain.addEventListener('mouseenter', triggerWave);
+    }
+    profileWaveName.addEventListener('click', triggerWave);
 }
 
-// 6. Slider horizontal con flechas para el Stack
+// 7. Slider horizontal con flechas para el Stack
 document.querySelectorAll('.slider-arrow').forEach((btn) => {
     btn.addEventListener('click', () => {
         const sliderId = btn.dataset.slider;
@@ -134,7 +167,7 @@ if (stackSlider && stackCounter) {
     stackSlider.addEventListener('scroll', updateStackCounter, { passive: true });
 }
 
-// 7. Selector de personaje tipo videojuego (ficha central grande + flechas <-- / -->)
+// 8. Carrusel cilíndrico 3D para las fichas de mascotas
 const charSheets = Array.from(document.querySelectorAll('.char-sheet'));
 const rosterDots = Array.from(document.querySelectorAll('.roster-dot'));
 const petCounter = document.getElementById('petCounter');
@@ -142,16 +175,22 @@ const petPrevBtn = document.getElementById('petPrevBtn');
 const petNextBtn = document.getElementById('petNextBtn');
 let currentPetIdx = 0;
 
-function selectCharacter(index) {
-    if (!charSheets.length) return;
-    currentPetIdx = (index + charSheets.length) % charSheets.length;
+function updateCylinder(index) {
+    const total = charSheets.length;
+    if (!total) return;
+    currentPetIdx = (index + total) % total;
+
+    const prevIdx = (currentPetIdx - 1 + total) % total;
+    const nextIdx = (currentPetIdx + 1) % total;
 
     charSheets.forEach((sheet, i) => {
-        const active = i === currentPetIdx;
-        sheet.classList.toggle('is-active', active);
-        if (active) {
-            const heading = sheet.querySelector('h4');
-            if (heading) scrambleText(heading);
+        sheet.classList.remove('pos-center', 'pos-left', 'pos-right');
+        if (i === currentPetIdx) {
+            sheet.classList.add('pos-center');
+        } else if (i === prevIdx) {
+            sheet.classList.add('pos-left');
+        } else if (i === nextIdx) {
+            sheet.classList.add('pos-right');
         }
     });
 
@@ -160,25 +199,27 @@ function selectCharacter(index) {
     });
 
     if (petCounter) {
-        petCounter.textContent = `[ PLAYER 0${currentPetIdx + 1} / 0${charSheets.length} ]`;
+        petCounter.textContent = `[ PLAYER 0${currentPetIdx + 1} / 0${total} ]`;
     }
 }
 
+updateCylinder(0);
+
 if (petPrevBtn) {
-    petPrevBtn.addEventListener('click', () => selectCharacter(currentPetIdx - 1));
+    petPrevBtn.addEventListener('click', () => updateCylinder(currentPetIdx - 1));
 }
 if (petNextBtn) {
-    petNextBtn.addEventListener('click', () => selectCharacter(currentPetIdx + 1));
+    petNextBtn.addEventListener('click', () => updateCylinder(currentPetIdx + 1));
 }
 
 rosterDots.forEach((dot) => {
     dot.addEventListener('click', () => {
         const idx = Number(dot.dataset.petIndex);
-        if (!Number.isNaN(idx)) selectCharacter(idx);
+        if (!Number.isNaN(idx)) updateCylinder(idx);
     });
 });
 
-// 8. Aparición suave escalonada al hacer scroll
+// 9. Aparición suave escalonada al hacer scroll
 const revealItems = document.querySelectorAll('.reveal-item');
 
 if ('IntersectionObserver' in window) {
@@ -201,7 +242,7 @@ if ('IntersectionObserver' in window) {
     revealItems.forEach((el) => el.classList.add('is-visible'));
 }
 
-// 9. Estado visual al enviar el formulario de contacto
+// 10. Estado visual al enviar el formulario de contacto
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
