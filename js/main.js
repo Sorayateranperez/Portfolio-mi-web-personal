@@ -100,7 +100,55 @@ document.querySelectorAll('.dossier-wrapper').forEach((card) => {
     }
 });
 
-// 6. Aparición suave escalonada al hacer scroll
+// 6. Sliders con flechas para Stack y Patrulla Canina
+document.querySelectorAll('.slider-arrow').forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const sliderId = btn.dataset.slider;
+        const track = document.getElementById(sliderId);
+        if (!track) return;
+
+        const step = Math.max(220, track.clientWidth * 0.65);
+        if (btn.classList.contains('slider-prev')) {
+            track.scrollLeft -= step;
+        } else {
+            track.scrollLeft += step;
+        }
+    });
+});
+
+const petsSlider = document.getElementById('petsSlider');
+const petCounter = document.getElementById('petCounter');
+if (petsSlider && petCounter) {
+    const petCards = petsSlider.querySelectorAll('.pet-card');
+    const updatePetCounter = () => {
+        const cardWidth = petCards[0] ? petCards[0].getBoundingClientRect().width + 12 : 1;
+        const index = Math.min(
+            petCards.length,
+            Math.max(1, Math.round(petsSlider.scrollLeft / cardWidth) + 1)
+        );
+        petCounter.textContent = `[ FICHA 0${index} / 0${petCards.length} ]`;
+    };
+    petsSlider.addEventListener('scroll', updatePetCounter, { passive: true });
+}
+
+const stackSlider = document.getElementById('stackSlider');
+const stackCounter = document.getElementById('stackCounter');
+if (stackSlider && stackCounter) {
+    const stackCards = stackSlider.querySelectorAll('.mini-stack-card');
+    const updateStackCounter = () => {
+        const maxScroll = Math.max(1, stackSlider.scrollWidth - stackSlider.clientWidth);
+        const ratio = stackSlider.scrollLeft / maxScroll;
+        const startIdx = Math.min(
+            Math.max(1, stackCards.length - 2),
+            Math.floor(ratio * Math.max(1, stackCards.length - 2)) + 1
+        );
+        const endIdx = Math.min(stackCards.length, startIdx + 2);
+        stackCounter.textContent = `0${startIdx} - 0${endIdx} / 0${stackCards.length}`;
+    };
+    stackSlider.addEventListener('scroll', updateStackCounter, { passive: true });
+}
+
+// 7. Aparición suave escalonada al hacer scroll
 const revealItems = document.querySelectorAll('.reveal-item');
 
 if ('IntersectionObserver' in window) {
@@ -123,7 +171,7 @@ if ('IntersectionObserver' in window) {
     revealItems.forEach((el) => el.classList.add('is-visible'));
 }
 
-// 7. Estado visual al enviar el formulario de contacto
+// 8. Estado visual al enviar el formulario de contacto
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
