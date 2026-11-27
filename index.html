@@ -13,7 +13,7 @@
     <!-- Hoja de estilos -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="top">
     <div class="main-container">
 
         <!-- ================= NAVBAR ================= -->
@@ -37,7 +37,7 @@
                     <ul class="nav-links">
                         <li><a href="#inicio">// INICIO</a></li>
                         <li><a href="#proyectos">// PROYECTOS</a></li>
-                        <li><a href="#servicios">// SERVICIOS</a></li>
+                        <li><a href="#expedientes">// EXPEDIENTES</a></li>
                         <li><a href="#sobre-mi">// SOBRE MÍ</a></li>
                         <li><a href="#contacto">// CONTACTO</a></li>
                     </ul>
@@ -51,7 +51,7 @@
                 <div class="section-tag">// PORTFOLIO WEB &amp; DESARROLLO FRONT-END</div>
                 <div class="divider-line"></div>
 
-                <h1 class="hero-title">DISEÑO<br>EXPERIENCIAS<br>DIGITALES</h1>
+                <h1 class="hero-title">SORAYA<br>TERÁN<br>PÉREZ</h1>
 
                 <p class="hero-subtitle">Desarrolladora Web Junior · Diseño y desarrollo web</p>
                 <p class="hero-code">[ HTML5 · CSS3 · JAVASCRIPT · WORDPRESS · DRUPAL ]</p>
@@ -103,7 +103,6 @@
                                 <span class="corner tr"></span>
                                 <span class="corner bl"></span>
                                 <span class="corner br"></span>
-                                <!-- Cambia img/avatar.png por el nombre real de tu imagen dentro de img/ -->
                                 <img src="img/avatar.png" alt="Avatar de Soraya Terán Pérez">
                             </div>
                         </div>
@@ -121,13 +120,13 @@
         </section>
 
         <!-- ================= PROYECTOS DESTACADOS ================= -->
-        <section id="proyectos">
+        <section id="proyectos" class="reveal-section">
             <h2 class="section-heading">PROYECTOS DESTACADOS</h2>
             <div class="full-divider"></div>
 
             <div class="projects-grid">
                 <!-- TARJETA 01: WORDPRESS -->
-                <article class="project-wrapper" onclick="window.open('#', '_blank', 'noopener')">
+                <article class="project-wrapper reveal-item" onclick="window.open('#exp-wordpress', '_self')">
                     <div class="folder-tab tab-purple">ARCHIVE // 01</div>
                     <div class="project-card-border">
                         <div class="project-card">
@@ -150,7 +149,7 @@
                                     <h3>PROYECTO WORDPRESS</h3>
                                     <p>TEMA / WEB EN PREPARACIÓN</p>
                                 </div>
-                                <a href="#" target="_blank" rel="noopener" class="card-arrow" onclick="event.stopPropagation()">↗</a>
+                                <a href="#exp-wordpress" class="card-arrow" onclick="event.stopPropagation()">↗</a>
                             </div>
 
                             <div>
@@ -162,7 +161,7 @@
                 </article>
 
                 <!-- TARJETA 02: CÓDIGO PROPIO -->
-                <article class="project-wrapper" onclick="window.open('#', '_blank', 'noopener')">
+                <article class="project-wrapper reveal-item" onclick="window.open('#exp-codigo', '_self')">
                     <div class="folder-tab tab-blue">ARCHIVE // 02</div>
                     <div class="project-card-border">
                         <div class="project-card">
@@ -185,7 +184,7 @@
                                     <h3>PROYECTO CÓDIGO</h3>
                                     <p>DESARROLLO FRONT-END A MEDIDA</p>
                                 </div>
-                                <a href="#" target="_blank" rel="noopener" class="card-arrow" onclick="event.stopPropagation()">↗</a>
+                                <a href="#exp-codigo" class="card-arrow" onclick="event.stopPropagation()">↗</a>
                             </div>
 
                             <div>
@@ -197,7 +196,7 @@
                 </article>
 
                 <!-- TARJETA 03: DRUPAL -->
-                <article class="project-wrapper" onclick="window.open('#', '_blank', 'noopener')">
+                <article class="project-wrapper reveal-item" onclick="window.open('#exp-drupal', '_self')">
                     <div class="folder-tab tab-yellow">ARCHIVE // 03</div>
                     <div class="project-card-border">
                         <div class="project-card">
@@ -220,7 +219,7 @@
                                     <h3>PROYECTO DRUPAL</h3>
                                     <p>ARQUITECTURA Y CONTENIDOS CMS</p>
                                 </div>
-                                <a href="#" target="_blank" rel="noopener" class="card-arrow" onclick="event.stopPropagation()">↗</a>
+                                <a href="#exp-drupal" class="card-arrow" onclick="event.stopPropagation()">↗</a>
                             </div>
 
                             <div>
@@ -232,6 +231,399 @@
                 </article>
             </div>
         </section>
+
+        <!-- ================= PROYECTOS // EXPEDIENTES ================= -->
+        <section id="expedientes" class="section-block reveal-section">
+            <div class="section-header-row">
+                <h2 class="section-heading">PROYECTOS // EXPEDIENTES</h2>
+                <span class="section-subtag">// DESGLOSE TÉCNICO &amp; DEMOS</span>
+            </div>
+            <div class="full-divider"></div>
+
+            <div class="dossiers-list">
+                <!-- EXPEDIENTE 01 -->
+                <article id="exp-wordpress" class="dossier-wrapper reveal-item">
+                    <div class="folder-tab tab-purple">ARCHIVE // 01</div>
+                    <div class="dossier-border">
+                        <div class="dossier-card">
+                            <div class="dossier-preview preview-purple">
+                                <div class="dossier-preview-top">
+                                    <span>DOSSIER_01 // PREVIEW</span>
+                                    <span>• • •</span>
+                                </div>
+                                <div class="dossier-preview-center">
+                                    <span class="dossier-num num-purple">01</span>
+                                    <div class="barcode small-barcode" aria-hidden="true"></div>
+                                </div>
+                                <div class="dossier-preview-bottom">
+                                    <strong>CAPTURA DEL PROYECTO</strong>
+                                    <span>[ PENDIENTE DE INCORPORAR ]</span>
+                                    <small>VIEWPORT // DESKTOP</small>
+                                </div>
+                            </div>
+
+                            <div class="dossier-content">
+                                <div class="dossier-top-meta">
+                                    <span>PROJECT FILE // 01</span>
+                                    <span class="status-pill">[ IN_DEV ]</span>
+                                </div>
+                                <h3>WORDPRESS</h3>
+                                <p class="dossier-desc">
+                                    Un sitio administrable, de la estructura a los contenidos. Desarrollo de plantillas, personalización visual y organización de secciones en WordPress.
+                                </p>
+                                <div class="dossier-stack">[ WORDPRESS · PHP · CSS ]</div>
+                                <div class="dossier-actions">
+                                    <a href="#contacto" class="dossier-btn btn-solid-purple">
+                                        <span>VER WEB</span>
+                                        <span>↗</span>
+                                    </a>
+                                    <a href="https://github.com/Sorayateranperez" target="_blank" rel="noopener" class="dossier-btn btn-outline">
+                                        <span>CÓDIGO</span>
+                                        <span>↗</span>
+                                    </a>
+                                    <span class="dossier-index">01 / 03</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- EXPEDIENTE 02 -->
+                <article id="exp-codigo" class="dossier-wrapper reveal-item">
+                    <div class="folder-tab tab-blue">ARCHIVE // 02</div>
+                    <div class="dossier-border">
+                        <div class="dossier-card">
+                            <div class="dossier-preview preview-blue">
+                                <div class="dossier-preview-top">
+                                    <span>DOSSIER_02 // PREVIEW</span>
+                                    <span>• • •</span>
+                                </div>
+                                <div class="dossier-preview-center">
+                                    <span class="dossier-num num-blue">02</span>
+                                    <div class="barcode small-barcode" aria-hidden="true"></div>
+                                </div>
+                                <div class="dossier-preview-bottom">
+                                    <strong>CAPTURA DEL PROYECTO</strong>
+                                    <span>[ PENDIENTE DE INCORPORAR ]</span>
+                                    <small>VIEWPORT // DESKTOP</small>
+                                </div>
+                            </div>
+
+                            <div class="dossier-content">
+                                <div class="dossier-top-meta">
+                                    <span>PROJECT FILE // 02</span>
+                                    <span class="status-pill">[ IN_DEV ]</span>
+                                </div>
+                                <h3>CÓDIGO HTML/CSS/JS</h3>
+                                <p class="dossier-desc">
+                                    Interfaces a medida con una base semántica, estilos responsive, animaciones HUD e interacciones limpias en JavaScript puro.
+                                </p>
+                                <div class="dossier-stack">[ HTML5 · CSS3 · JS ]</div>
+                                <div class="dossier-actions">
+                                    <a href="#contacto" class="dossier-btn btn-solid-blue">
+                                        <span>VER WEB</span>
+                                        <span>↗</span>
+                                    </a>
+                                    <a href="https://github.com/Sorayateranperez" target="_blank" rel="noopener" class="dossier-btn btn-outline">
+                                        <span>CÓDIGO</span>
+                                        <span>↗</span>
+                                    </a>
+                                    <span class="dossier-index">02 / 03</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- EXPEDIENTE 03 -->
+                <article id="exp-drupal" class="dossier-wrapper reveal-item">
+                    <div class="folder-tab tab-yellow">ARCHIVE // 03</div>
+                    <div class="dossier-border">
+                        <div class="dossier-card">
+                            <div class="dossier-preview preview-yellow">
+                                <div class="dossier-preview-top">
+                                    <span>DOSSIER_03 // PREVIEW</span>
+                                    <span>• • •</span>
+                                </div>
+                                <div class="dossier-preview-center">
+                                    <span class="dossier-num num-yellow">03</span>
+                                    <div class="barcode small-barcode" aria-hidden="true"></div>
+                                </div>
+                                <div class="dossier-preview-bottom">
+                                    <strong>CAPTURA DEL PROYECTO</strong>
+                                    <span>[ PENDIENTE DE INCORPORAR ]</span>
+                                    <small>VIEWPORT // DESKTOP</small>
+                                </div>
+                            </div>
+
+                            <div class="dossier-content">
+                                <div class="dossier-top-meta">
+                                    <span>PROJECT FILE // 03</span>
+                                    <span class="status-pill">[ IN_DEV ]</span>
+                                </div>
+                                <h3>DRUPAL</h3>
+                                <p class="dossier-desc">
+                                    Contenido estructurado y una arquitectura modular. Configuración de tipos de contenido, taxonomías y vistas en Drupal.
+                                </p>
+                                <div class="dossier-stack">[ DRUPAL · TWIG · CMS ]</div>
+                                <div class="dossier-actions">
+                                    <a href="#contacto" class="dossier-btn btn-solid-yellow">
+                                        <span>VER WEB</span>
+                                        <span>↗</span>
+                                    </a>
+                                    <a href="https://github.com/Sorayateranperez" target="_blank" rel="noopener" class="dossier-btn btn-outline">
+                                        <span>CÓDIGO</span>
+                                        <span>↗</span>
+                                    </a>
+                                    <span class="dossier-index">03 / 03</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= SOBRE MÍ // PERFIL & TRIPULACIÓN ================= -->
+        <section id="sobre-mi" class="section-block reveal-section">
+            <div class="section-header-row">
+                <h2 class="section-heading">SOBRE MÍ // PERFIL</h2>
+                <span class="section-subtag">// HUMAN BEHIND THE CODE</span>
+            </div>
+            <div class="full-divider"></div>
+
+            <div class="about-grid">
+                <!-- COLUMNA IZQUIERDA: BIO -->
+                <div class="about-bio-wrapper reveal-item">
+                    <div class="folder-tab tab-orange">OPERATOR // 01</div>
+                    <div class="about-bio-border">
+                        <div class="about-bio-card">
+                            <h3>SORAYA TERÁN PÉREZ</h3>
+                            <p class="about-role">Desarrolladora Web Junior</p>
+                            <p class="about-degree">CFGS DAW</p>
+
+                            <p class="about-text">
+                                Del diseño a la web: estructura, código y detalle. Un perfil junior con ganas de seguir construyendo y aprendiendo, combinando desarrollo front-end a medida con gestores de contenido como WordPress y Drupal.
+                            </p>
+
+                            <div class="bio-divider"></div>
+
+                            <ul class="bio-specs">
+                                <li><span>&gt; ROL</span><strong>DESARROLLO WEB JUNIOR</strong></li>
+                                <li><span>&gt; FORMACIÓN</span><strong>CFGS DAW</strong></li>
+                                <li><span>&gt; ENFOQUE</span><strong>FRONTEND + CMS</strong></li>
+                                <li><span>&gt; SECTOR</span><strong>NAVEGACIÓN / INTERFAZ</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA DERECHA: SYSTEM // STACK -->
+                <div class="stack-panel-wrapper reveal-item">
+                    <div class="stack-panel-border">
+                        <div class="stack-panel">
+                            <div class="stack-header">
+                                <span>SYSTEM // STACK</span>
+                                <span>06</span>
+                            </div>
+
+                            <div class="stack-grid">
+                                <div class="stack-tile accent-orange">
+                                    <span class="stack-num">01</span>
+                                    <h4>HTML5 / CSS3</h4>
+                                    <p>ESTRUCTURA + ESTILOS</p>
+                                </div>
+                                <div class="stack-tile accent-yellow">
+                                    <span class="stack-num">02</span>
+                                    <h4>JavaScript</h4>
+                                    <p>LÓGICA + INTERACCIÓN</p>
+                                </div>
+                                <div class="stack-tile accent-purple">
+                                    <span class="stack-num">03</span>
+                                    <h4>WordPress</h4>
+                                    <p>GESTIÓN DE CONTENIDO</p>
+                                </div>
+                                <div class="stack-tile accent-blue">
+                                    <span class="stack-num">04</span>
+                                    <h4>Drupal</h4>
+                                    <p>ARQUITECTURA CMS</p>
+                                </div>
+                                <div class="stack-tile accent-orange">
+                                    <span class="stack-num">05</span>
+                                    <h4>Git / GitHub</h4>
+                                    <p>CONTROL DE VERSIONES</p>
+                                </div>
+                                <div class="stack-tile accent-purple">
+                                    <span class="stack-num">06</span>
+                                    <h4>Figma</h4>
+                                    <p>DISEÑO DE INTERFAZ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-BLOQUE ÉPICO: K9 CREW / FICHA GALÁCTICA DE PERROS -->
+            <div class="crew-box-wrapper reveal-item">
+                <div class="crew-box-border">
+                    <div class="crew-box">
+                        <div class="crew-header">
+                            <div>
+                                <span class="crew-tag">// STARFLEET_K9_UNIT — BRIDGE COMPANIONS</span>
+                                <h3>TRIPULACIÓN CANINA // ARCHIVO DE BORDO</h3>
+                            </div>
+                            <span class="crew-status">[ PASA EL RATÓN PARA ESCANEAR FICHA ]</span>
+                        </div>
+
+                        <div class="crew-grid">
+                            <!-- PERRO 01 -->
+                            <article class="pet-card pet-purple">
+                                <div class="pet-photo-wrap">
+                                    <span class="pet-badge">UNIT // K9-ALPHA</span>
+                                    <img src="img/perro-1.png" alt="Compañero canino 01 en la nave">
+                                </div>
+                                <div class="pet-info">
+                                    <div class="pet-title-row">
+                                        <h4>UNIDAD CANINA 01</h4>
+                                        <span>[ RANGO: MORAL_OFFICER ]</span>
+                                    </div>
+                                    <p class="pet-bio">
+                                        Oficial de moral y vigilancia de periférico. Activa el modo siesta táctica cuando el CSS se vuelve rebelde.
+                                    </p>
+                                    <div class="pet-hud-dossier">
+                                        <div><span>SECTOR:</span> <strong>PUENTE DE MANDO / SOFÁ</strong></div>
+                                        <div><span>HABILIDAD:</span> <strong>REDUCCIÓN DE ESTRÉS +95%</strong></div>
+                                        <div><span>PROTOCOLO:</span> <strong>PEDIR PREMIO AL COMPILAR</strong></div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- PERRO 02 -->
+                            <article class="pet-card pet-yellow">
+                                <div class="pet-photo-wrap">
+                                    <span class="pet-badge">UNIT // K9-OMEGA</span>
+                                    <img src="img/perro-2.png" alt="Compañero canino 02 en la nave">
+                                </div>
+                                <div class="pet-info">
+                                    <div class="pet-title-row">
+                                        <h4>UNIDAD CANINA 02</h4>
+                                        <span>[ RANGO: RADAR_SCOUT ]</span>
+                                    </div>
+                                    <p class="pet-bio">
+                                        Exploradora de largo alcance y detectora de pasos hacia la cocina. Supervisa cada commit desde primera línea.
+                                    </p>
+                                    <div class="pet-hud-dossier">
+                                        <div><span>SECTOR:</span> <strong>SENSOR ÓPTICO / ESCRITORIO</strong></div>
+                                        <div><span>HABILIDAD:</span> <strong>ALERTA DE SNACKS EN TIEMPO REAL</strong></div>
+                                        <div><span>PROTOCOLO:</span> <strong>MIRADA LÁSER HASTA QUE JUEGUES</strong></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACTO // CONEXIÓN ================= -->
+        <section id="contacto" class="section-block reveal-section">
+            <div class="section-header-row">
+                <h2 class="section-heading">CONTACTO // CONEXIÓN</h2>
+                <span class="section-subtag">// OPEN A NEW CHANNEL</span>
+            </div>
+            <div class="full-divider"></div>
+
+            <div class="contact-grid">
+                <!-- IZQUIERDA: CANALES -->
+                <div class="contact-channels reveal-item">
+                    <h3>¿CONSTRUIMOS ALGO?</h3>
+                    <p class="contact-intro">
+                        Una idea, una colaboración o el siguiente reto.<br>
+                        La conversación empieza aquí.
+                    </p>
+
+                    <div class="channel-list">
+                        <a href="mailto:soraya@ejemplo.com" class="channel-card channel-orange">
+                            <div class="channel-left">
+                                <span class="channel-num">01</span>
+                                <div>
+                                    <strong>EMAIL</strong>
+                                    <span>CANAL // CORREO ELECTRÓNICO</span>
+                                </div>
+                            </div>
+                            <span class="channel-arrow">↗</span>
+                        </a>
+
+                        <a href="https://github.com/Sorayateranperez" target="_blank" rel="noopener" class="channel-card channel-purple">
+                            <div class="channel-left">
+                                <span class="channel-num">02</span>
+                                <div>
+                                    <strong>GITHUB</strong>
+                                    <span>ARCHIVO // REPOSITORIOS</span>
+                                </div>
+                            </div>
+                            <span class="channel-arrow">↗</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="channel-card channel-blue">
+                            <div class="channel-left">
+                                <span class="channel-num">03</span>
+                                <div>
+                                    <strong>LINKEDIN</strong>
+                                    <span>RED // PERFIL PROFESIONAL</span>
+                                </div>
+                            </div>
+                            <span class="channel-arrow">↗</span>
+                        </a>
+                    </div>
+
+                    <p class="channel-note">[ ENLACES PENDIENTES DE CONFIGURAR ]</p>
+                </div>
+
+                <!-- DERECHA: FORMULARIO -->
+                <div class="contact-form-wrapper reveal-item">
+                    <div class="contact-form-border">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-top-label">TRANSMISIÓN // NUEVO MENSAJE</div>
+                            <div class="form-divider"></div>
+
+                            <div class="form-row-2">
+                                <div class="form-field">
+                                    <label for="nombre">01 / NOMBRE</label>
+                                    <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="email">02 / EMAIL</label>
+                                    <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="mensaje">03 / MENSAJE</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame en qué estás pensando..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit-hud">
+                                <span>ENVIAR</span>
+                                <span>↗</span>
+                            </button>
+
+                            <p id="formFeedback" class="form-footer-note">// GRACIAS POR LLEGAR HASTA AQUÍ</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="site-footer">
+            <div class="footer-line"></div>
+            <div class="footer-bar">
+                <span>SORAYA TERÁN PÉREZ // 2026</span>
+                <a href="#top" class="back-to-top">VOLVER ARRIBA ↑</a>
+            </div>
+        </footer>
 
     </div>
 
