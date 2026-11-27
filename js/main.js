@@ -36,7 +36,22 @@ if (idCard && heroRight) {
     });
 }
 
-// 3. Efecto magnético sutil en los botones principales
+// 3. Efecto 3D sutil en los expedientes de proyectos al mover el ratón
+document.querySelectorAll('.dossier-wrapper').forEach((dossier) => {
+    dossier.addEventListener('mousemove', (e) => {
+        const rect = dossier.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        dossier.style.transform = `translate(-6px, -8px) rotateX(${y * -3.5}deg) rotateY(${x * 3.5}deg)`;
+    });
+
+    dossier.addEventListener('mouseleave', () => {
+        dossier.style.transform = '';
+    });
+});
+
+// 4. Efecto magnético sutil en los botones principales
 document.querySelectorAll('.btn-bevel').forEach((btn) => {
     btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect();
@@ -51,7 +66,7 @@ document.querySelectorAll('.btn-bevel').forEach((btn) => {
     });
 });
 
-// 4. Efecto de decodificación en títulos de proyectos al hacer hover
+// 5. Efecto de decodificación en títulos de expedientes al hacer hover
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789//_#';
 
 function scrambleText(element) {
@@ -75,17 +90,17 @@ function scrambleText(element) {
             clearInterval(element.scrambleInterval);
         }
         iteration += 1 / 2;
-    }, 22);
+    }, 20);
 }
 
-document.querySelectorAll('.project-wrapper, .dossier-wrapper').forEach((card) => {
-    const title = card.querySelector('.card-mid h3, .dossier-content h3');
+document.querySelectorAll('.dossier-wrapper').forEach((card) => {
+    const title = card.querySelector('.dossier-content h3');
     if (title) {
         card.addEventListener('mouseenter', () => scrambleText(title));
     }
 });
 
-// 5. Aparición suave escalonada al hacer scroll
+// 6. Aparición suave escalonada al hacer scroll
 const revealItems = document.querySelectorAll('.reveal-item');
 
 if ('IntersectionObserver' in window) {
@@ -100,7 +115,7 @@ if ('IntersectionObserver' in window) {
                 }
             });
         },
-        { threshold: 0.12 }
+        { threshold: 0.1 }
     );
 
     revealItems.forEach((el) => observer.observe(el));
@@ -108,7 +123,7 @@ if ('IntersectionObserver' in window) {
     revealItems.forEach((el) => el.classList.add('is-visible'));
 }
 
-// 6. Estado visual al enviar el formulario de contacto
+// 7. Estado visual al enviar el formulario de contacto
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
