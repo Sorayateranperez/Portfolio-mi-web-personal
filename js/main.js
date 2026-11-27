@@ -100,55 +100,61 @@ document.querySelectorAll('.dossier-wrapper').forEach((card) => {
     }
 });
 
-// 6. Sliders con flechas para Stack y Patrulla Canina
+// 6. Slider horizontal con flechas para el Stack
 document.querySelectorAll('.slider-arrow').forEach((btn) => {
     btn.addEventListener('click', () => {
         const sliderId = btn.dataset.slider;
+        const dir = btn.dataset.dir;
         const track = document.getElementById(sliderId);
         if (!track) return;
 
-        const step = Math.max(220, track.clientWidth * 0.65);
-        if (btn.classList.contains('slider-prev')) {
-            track.scrollLeft -= step;
-        } else {
-            track.scrollLeft += step;
-        }
+        const step = Math.max(200, track.clientWidth * 0.6);
+        track.scrollLeft += dir === 'prev' ? -step : step;
     });
 });
-
-const petsSlider = document.getElementById('petsSlider');
-const petCounter = document.getElementById('petCounter');
-if (petsSlider && petCounter) {
-    const petCards = petsSlider.querySelectorAll('.pet-card');
-    const updatePetCounter = () => {
-        const cardWidth = petCards[0] ? petCards[0].getBoundingClientRect().width + 12 : 1;
-        const index = Math.min(
-            petCards.length,
-            Math.max(1, Math.round(petsSlider.scrollLeft / cardWidth) + 1)
-        );
-        petCounter.textContent = `[ FICHA 0${index} / 0${petCards.length} ]`;
-    };
-    petsSlider.addEventListener('scroll', updatePetCounter, { passive: true });
-}
 
 const stackSlider = document.getElementById('stackSlider');
 const stackCounter = document.getElementById('stackCounter');
 if (stackSlider && stackCounter) {
-    const stackCards = stackSlider.querySelectorAll('.mini-stack-card');
+    const totalStack = stackSlider.querySelectorAll('.mini-stack-card').length;
     const updateStackCounter = () => {
         const maxScroll = Math.max(1, stackSlider.scrollWidth - stackSlider.clientWidth);
         const ratio = stackSlider.scrollLeft / maxScroll;
-        const startIdx = Math.min(
-            Math.max(1, stackCards.length - 2),
-            Math.floor(ratio * Math.max(1, stackCards.length - 2)) + 1
-        );
-        const endIdx = Math.min(stackCards.length, startIdx + 2);
-        stackCounter.textContent = `0${startIdx} - 0${endIdx} / 0${stackCards.length}`;
+        const startIdx = Math.min(Math.max(1, totalStack - 3), Math.floor(ratio * Math.max(1, totalStack - 3)) + 1);
+        const endIdx = Math.min(totalStack, startIdx + 3);
+        stackCounter.textContent = `0${startIdx} - 0${endIdx} / 0${totalStack}`;
     };
     stackSlider.addEventListener('scroll', updateStackCounter, { passive: true });
 }
 
-// 7. Aparición suave escalonada al hacer scroll
+// 7. Carrusel individual tipo ficha de videojuego para la Patrulla Canina
+const gameCards = Array.from(document.querySelectorAll('.game-card'));
+const petCounter = document.getElementById('petCounter');
+const petPrevBtn = document.getElementById('petPrevBtn');
+const petNextBtn = document.getElementById('petNextBtn');
+let currentPetIdx = 0;
+
+function renderGameCard(index) {
+    if (!gameCards.length) return;
+    currentPetIdx = (index + gameCards.length) % gameCards.length;
+
+    gameCards.forEach((card, i) => {
+        card.classList.toggle('is-active', i === currentPetIdx);
+    });
+
+    if (petCounter) {
+        petCounter.textContent = `[ UNIDAD 0${currentPetIdx + 1} / 0${gameCards.length} ]`;
+    }
+}
+
+if (petPrevBtn) {
+    petPrevBtn.addEventListener('click', () => renderGameCard(currentPetIdx - 1));
+}
+if (petNextBtn) {
+    petNextBtn.addEventListener('click', () => renderGameCard(currentPetIdx + 1));
+}
+
+// 8. Aparición suave escalonada al hacer scroll
 const revealItems = document.querySelectorAll('.reveal-item');
 
 if ('IntersectionObserver' in window) {
@@ -171,7 +177,7 @@ if ('IntersectionObserver' in window) {
     revealItems.forEach((el) => el.classList.add('is-visible'));
 }
 
-// 8. Estado visual al enviar el formulario de contacto
+// 9. Estado visual al enviar el formulario de contacto
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
