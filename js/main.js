@@ -66,7 +66,7 @@ document.querySelectorAll('.btn-bevel').forEach((btn) => {
     });
 });
 
-// 5. Efecto de decodificación en títulos de expedientes al hacer hover
+// 5. Efecto de decodificación en títulos al hacer hover
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789//_#';
 
 function scrambleText(element) {
@@ -100,6 +100,13 @@ document.querySelectorAll('.dossier-wrapper').forEach((card) => {
     }
 });
 
+// Scramble también en el título de SOBRE MÍ al pasar por su tarjeta
+const aboutMain = document.querySelector('.about-main-wrapper');
+const aboutTitle = document.querySelector('.about-main-text h3');
+if (aboutMain && aboutTitle) {
+    aboutMain.addEventListener('mouseenter', () => scrambleText(aboutTitle));
+}
+
 // 6. Slider horizontal con flechas para el Stack
 document.querySelectorAll('.slider-arrow').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -127,32 +134,49 @@ if (stackSlider && stackCounter) {
     stackSlider.addEventListener('scroll', updateStackCounter, { passive: true });
 }
 
-// 7. Carrusel individual tipo ficha de videojuego para la Patrulla Canina
-const gameCards = Array.from(document.querySelectorAll('.game-card'));
+// 7. Selector de personaje tipo videojuego (ficha central grande + flechas <-- / -->)
+const charSheets = Array.from(document.querySelectorAll('.char-sheet'));
+const rosterDots = Array.from(document.querySelectorAll('.roster-dot'));
 const petCounter = document.getElementById('petCounter');
 const petPrevBtn = document.getElementById('petPrevBtn');
 const petNextBtn = document.getElementById('petNextBtn');
 let currentPetIdx = 0;
 
-function renderGameCard(index) {
-    if (!gameCards.length) return;
-    currentPetIdx = (index + gameCards.length) % gameCards.length;
+function selectCharacter(index) {
+    if (!charSheets.length) return;
+    currentPetIdx = (index + charSheets.length) % charSheets.length;
 
-    gameCards.forEach((card, i) => {
-        card.classList.toggle('is-active', i === currentPetIdx);
+    charSheets.forEach((sheet, i) => {
+        const active = i === currentPetIdx;
+        sheet.classList.toggle('is-active', active);
+        if (active) {
+            const heading = sheet.querySelector('h4');
+            if (heading) scrambleText(heading);
+        }
+    });
+
+    rosterDots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === currentPetIdx);
     });
 
     if (petCounter) {
-        petCounter.textContent = `[ UNIDAD 0${currentPetIdx + 1} / 0${gameCards.length} ]`;
+        petCounter.textContent = `[ PLAYER 0${currentPetIdx + 1} / 0${charSheets.length} ]`;
     }
 }
 
 if (petPrevBtn) {
-    petPrevBtn.addEventListener('click', () => renderGameCard(currentPetIdx - 1));
+    petPrevBtn.addEventListener('click', () => selectCharacter(currentPetIdx - 1));
 }
 if (petNextBtn) {
-    petNextBtn.addEventListener('click', () => renderGameCard(currentPetIdx + 1));
+    petNextBtn.addEventListener('click', () => selectCharacter(currentPetIdx + 1));
 }
+
+rosterDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.petIndex);
+        if (!Number.isNaN(idx)) selectCharacter(idx);
+    });
+});
 
 // 8. Aparición suave escalonada al hacer scroll
 const revealItems = document.querySelectorAll('.reveal-item');
